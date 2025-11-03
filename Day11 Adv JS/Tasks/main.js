@@ -64,17 +64,18 @@ console.log(Rectangle.GetCountOfInstancesCreatedByRectangle())
 
 
 function Square(length){
-    if(Square.instanceCounter > 1){
-        throw "you cannot create more than One objects";
-    }
     if(this.constructor == Square){
         Square.instanceCounter++;
     }
+    if(Square.instanceCounter > 1){
+        throw "you cannot create more than One objects";
+    }
     Rectangle.call(this,length,length);
-    this.length = length;
+    // this.length = length;
 }
 
-Square.prototype.instanceCounter = 0;
+Square.instanceCounter = 0;
+
 Square.GetCountOfInstances = function(){
     return this.counter;
 }
@@ -82,7 +83,7 @@ Square.GetCountOfInstances = function(){
 Square.prototype = Object.create(Rectangle.prototype)
 Square.prototype.constructor = Square;
 
-sqr1 = new Square(5)
+var sqr1 = new Square(5)
 console.log("****************************")
 console.log(sqr1.Area())
 console.log(sqr1.Perimeter())
@@ -91,3 +92,4 @@ console.log(sqr1.toString())
 console.log(Rectangle.GetCountOfInstances())
 console.log(Rectangle.GetCountOfInstancesCreatedByRectangle())
 
+var sqr2 = new Square(7)
