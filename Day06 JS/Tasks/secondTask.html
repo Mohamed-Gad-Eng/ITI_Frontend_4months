@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var x = 0;
+        var myMethod = setInterval(function () {
+            document.write(`<div><div style="border: 3px solid red; display: inline-block;"><p style="border: 1px solid red; text-align: center; margin: 1px;">${x}<br></p></div></div>`)
+            document.title = x++;
+            if (x > 12) {
+                clearInterval(myMethod);
+            }
+        }, 500)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

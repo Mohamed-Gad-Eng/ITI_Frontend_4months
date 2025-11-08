@@ -1,0 +1,14 @@
+﻿Events 
+action ==> HTML 
+button ==> event 
+static web page 
+code 
+intrnal script 
+external script 
+Event Handeler 
+<input type="button" onclick="alert('Hi')"/>
+
+<input type="button" onclick="fun"/>
+
+event firing == button clicked 
+==> call fun()

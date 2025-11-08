@@ -1,0 +1,58 @@
+JS 
+Interpreted 
+line by line 
+
+case sensitive 
+a !=A
+x!=X
+
+; at end of line 
+
+// comment for single line 
+/*
+comment multi line 
+
+*/
+
+function  if for 
+ 
+  f ;
+if4;
+_if;
+if_fail
+$if ;
+
+loosely type language 
+   var x ;variable declaration 
+var y=2 // variable intalization 
+y="ali"
+
+
+var 
+
+var x ;
+var y=20;
+z=100;
+
+
+- cross platform 
+
+where to write JS
+
+External Script 
+
+Internal Script any place at html 
+3- Event Handeler 
+
+
+
+ 
+
+
+
+
+
+
+
+
+

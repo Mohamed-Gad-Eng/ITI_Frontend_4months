@@ -1,0 +1,18 @@
+﻿Objects 
+class Based Object 
+String 
+
+Anynomous Obj // onfly object 
+
+var arr ={}// object 
+var obj = new Object ()
+
+obj={
+  key :value,
+  key:value
+
+}
+key value Paired 
+
+object Language 
+

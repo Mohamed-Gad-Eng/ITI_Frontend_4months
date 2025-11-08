@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   
+</head>
+<body>
+    <script>
+                         /// function statement 
+
+        //function fun(){
+        //    // block of code
+        //}// function declaration
+
+        //fun();// function calling 
+        function print() {
+            console.log("Welcome")
+        }
+        print()//
+
+        function greeting(_name) {
+            console.log("welcome ya "+_name)
+        }
+        greeting("Ali")
+        greeting()
+        greeting("mona", "ali")
+        greeting// function body
+
+
+        function getDouble(num) {
+            return num * 2;
+            
+        }
+
+        var res = getDouble(5);
+
+
+        //
+
+        //function sum(a, b) {
+        //    //check
+        //    if (a == undefined || b == undefined)
+        //        a = b = 0;
+        //    console.log(a+b)
+        //}
+
+        //sum(5, 10)
+
+        // default params 
+        function sum(a=0, b=0) {
+           
+            console.log(a + b)
+        }
+
+        sum(5, 10)
+
+
+        //======================
+        // arguments 
+        function sumAll() {
+            // console.log(arguments)
+            sum = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                sum += arguments[i]
+            }
+            console.log(sum)
+
+        }
+        sumAll(1, 10, 20, 30)// create arguments
+
+        /////// function expression 
+
+
+      var res=  function (num) {
+            return num * 2;
+
+        }
+
+      
+    </script>
+</body>
+</html>

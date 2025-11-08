@@ -1,0 +1,83 @@
+CSS 
+ Static Web Page
+problems 
+
+1- redundancy :
+<p align="center">iti</p>
+<p>iti</p>
+<p>iti</p>
+<p>iti</p>
+
+2- maintability :
+<p >iti</p>
+<p>iti</p>
+<p>iti</p>
+<p>iti</p>
+
+
+3- center image && image border color && font size 
+
+4- Mixing Between Table Data and Design 
+
+=========================================
+where to write CSS 
+1- External Style 
+
+2- Internal Style inside <style> inside <head>
+
+3-  inline Style as attribute style="css code"
+
+========================================
+Selector {
+    prop:value ;
+    prop:value ;
+    prop:value ;
+}
+
+p{
+text-align:center;
+color:gold;
+}
+
+============================
+IDE 
+vscode 
+
+================================
+Selectors 
+Tag Name Selector 
+ID Selector 
+Class Selector 
+Group Selector 
+Attribute Selector 
+Universal Selector 
+Pesudo Class Selector 
+nth-child Selector 
+Hiraricay Selector 
+First Child 
+LastChild 
+
+===================
+block ==>> width height padding margin 
+inline=>> no width no height margin left and right only
+==================================
+
+position (abluote , relative , sticky , fixed)
+float ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

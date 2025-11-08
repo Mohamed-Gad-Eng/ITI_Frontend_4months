@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+</head>
+<body>
+    <form action="server.html">
+        <input type="text" name="usr" placeholder="Enter User Name 👤" id="usr"/><br><br>
+        <input type="password" name="pass" placeholder="Enter User Pass 🔐" id="pass"/><br><br>
+        <input type="submit" value="LogIn" id="btn"/>
+
+    </form>
+ 
+    <script>
+       btn.addEventListener("click",function(){
+//  document.cookie=`user=${usr.value}`
+//  document.cookie=`password=${pass.value};expires= Sun,2 Nov 2025 12:00:00 UTC `
+
+     localStorage.setItem("user",usr.value)
+     localStorage.setItem("pass",pass.value)
+
+
+       })
+    </script>
+
+</body>
+</html>

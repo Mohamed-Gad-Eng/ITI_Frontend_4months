@@ -1,0 +1,32 @@
+var students = [
+  { name: "Ali", age: 20, Crs: "CS" },
+  { name: "Sara", age: 22, Crs: "Math" },
+  { name: "Omar", age: 19, Crs: "Physics" },
+  { name: "Laila", age: 21, Crs: "CS" },
+  { name: "Hassan", age: 23, Crs: "Engineering" },
+  { name: "Mona", age: 20, Crs: "Biology" },
+  { name: "Kareem", age: 24, Crs: "Math" },
+  { name: "Noor", age: 18, Crs: "CS" }
+];
+
+suppose you have this array write js code to get these results and print Results on Document.
+
+1- Display all students
+2-find and Search for a student by name and print their details.
+3-Find how many students are in the array(count Students).
+4-Get all students who are in "CS"
+5-Find youngest student
+6- Sort Students by age
+7-Create a new array with only student names.
+8-Check if all students are above age  18 and return true or false 
+9-return Students Who Have the Same Crs
+10-Calculate the average age of all students.
+11-Sort and Find top 3 oldest students
+12-Find if there are students with the same name.
+13-Reverse the array without using .reverse().
+14-Add a new property email for each student in the format: name.toLowerCase+"@iti.com"
+
+
+
+
+

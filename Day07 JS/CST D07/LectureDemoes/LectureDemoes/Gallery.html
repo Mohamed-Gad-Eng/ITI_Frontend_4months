@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   
+</head>
+<body>
+    <img src="Images/1.png"  width="250" height="250" border="3"/><br /><br />
+    <input type="button" value="prev" id="prev"/>
+    &nbsp;&nbsp;
+    <input type="button" value="next" id="next" />
+
+
+    <script>
+
+      
+        //selectors
+        img = document.querySelector("img")
+        next = document.querySelector("#next")
+        prev = document.querySelector("#prev")
+        counter = 1;
+        next.addEventListener('click', function () {
+            counter++;
+            if (counter > 6)
+            counter=1
+            img.src = "Images/" + counter + ".png"
+
+        })// next
+
+
+        prev.addEventListener('click', function () {
+            counter--;
+            if (counter <1)
+                counter = 6
+            img.src = "Images/" + counter + ".png"
+
+        })// prev
+
+    </script>
+</body>
+</html>

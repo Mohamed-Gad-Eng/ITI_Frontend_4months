@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function calc(a,b,c){
+        //  console.log(a+b+c)
+        // }
+        //  calc(5,5,6)
+//  function calc(op,a,b,c){
+//         switch(op){
+//               case"+": console.log(a+b+c)
+//               break;
+//              case"*": console.log(a*b*c)
+//               break;  
+//                case"-": console.log(a-b-c)
+//               break;
+//                case"": console.log(a/b/c)
+//               break;
+
+//         }
+//         }
+
+
+//  function calc(op){
+//        arr=[]
+//         switch(op){
+//               case"+": for(i=1;i<arguments.length;i++){
+//                   arr.push(arguments[i])
+
+//               }
+//               console.log(eval(arr.join(op)))
+//               break;
+//               case"*": for(i=1;i<arguments.length;i++){
+//                   arr.push(arguments[i])
+
+//               }
+//               console.log(eval(arr.join(op)))
+//               break;  
+//                case"-": console.log(a-b-c)
+//               break;
+//                case"": console.log(a/b/c)
+//               break;
+
+//         }
+//         }
+
+
+      //   calc("*",5,6)
+
+
+
+      // rest 
+      function calc(op,...nums){
+           console.log(nums)// array
+         console.log(  eval(nums.join(op)))
+        }
+
+      calc("+",10,20,100,200)
+
+      // spread 
+      var arr=[20,5,12,70,100]
+
+      // mix arrays
+      arr1=[200,4000,700]
+    arr2=[20,40,60]
+     mergedArr=[...arr1,...arr2]
+
+     // deepcopy 
+
+     //arr3= arr1; // shallow copy 
+     arr3=[...arr1]// deepcopy
+
+
+     // spread in object 
+     // clone object 
+     let std={name:"aly" ,age:20,grade:90}
+     let clonedobj={...std}
+
+
+
+
+    </script>
+
+   
+</body>
+</html>

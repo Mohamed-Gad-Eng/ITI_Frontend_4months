@@ -1,0 +1,8 @@
+create log in form 
+and check if username=="ali "& password=="123"
+then open window and write welcome yaali on it with color red 
+
+else 
+open error window 
+
+// search for search key in location object

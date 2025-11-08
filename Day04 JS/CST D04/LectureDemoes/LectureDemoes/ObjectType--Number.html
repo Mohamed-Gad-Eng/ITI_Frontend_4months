@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+       // var num = 100;  // literal Declaration
+       // typeof num // number 
+        var num2 = new Number(100) // contstructor 
+
+        console.log(typeof num2)
+        num2.constructor.name//Number
+        num2.toString()//'100'
+
+        console.log(num2 instanceof Number)
+        num2.valueOf()//100 return primitive value from object type 
+        num2.toLocaleString("Ar-Eg")
+        var num = new Number(52.458)
+        num.toFixed()
+        num.toFixed(1)
+        typeof num.toFixed(2) // string 
+        num.toPrecision()
+        Number.parseInt("25.4")
+        Number.parseFloat("25.4")
+        parseInt("20.4")
+        parseInt("20ali")
+        typeof parseInt("ali")
+
+        isNaN(parseInt("ali"))// true
+        isNaN(parseInt("20ali"))// false 
+
+        var mynum = 2000;
+        //mynum=new Number(2000)// Wrapper object 
+        mynum.toFixed()//"2000"
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

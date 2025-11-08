@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <p id="p1">Hello World</p>
+    <p id="p2">Hello ITI</p>
+    <button id="btn1" class="btn-class">hid</button>
+
+
+
+    <div id="div1" style="display: none;height: 100px;width:100px;background-color: red;"></div>
+    <div id="div2" style="display: none;height: 100px;width:100px;background-color: green;"></div>
+    <div id="div3" style="display: none;height: 100px;width:100px;background-color: yellow;"></div>
+    <button id="btn2" >fade</button>
+
+
+
+    <div id="flip" style="height: 100px;width:500px;background-color: red;">Hello ITT<p>P1</p></div>
+    <div id="panel" style="display: none;height: 100px;width:500px;background-color: green;">Jquery Quorse</div>
+    <button id="stop">stop</button>
+    <script>
+  $(document).ready(function(){
+     $("#stop").hover(function(){
+    $("#stop").css({"background-color":"red","width":"60px"});
+
+  });
+  $("#flip").click(function(){
+    $("#panel").slideDown(5000);
+  });
+  $("#stop").click(function(){
+    $("#panel").stop();
+  });
+});
+
+        $("#btn2").click(function () {
+            $("#div1").fadeIn();
+            $("#div2").fadeIn(3000);
+             $("#div2").fadeOut(3000);
+        })
+        $(".btn-class").click(function () {
+            alert("My Text:"+$("#flip").text());
+             $("#p1").css("color", "red").slideUp(2000).slideDown(2000);
+            // $("#p2").hide();
+            // $("#p1").hide(1000,function () {
+            //     alert("your element has been deleded!")
+            // });
+            // $("#p2").show(1000);
+        })
+    </script>
+</body>
+
+</html>

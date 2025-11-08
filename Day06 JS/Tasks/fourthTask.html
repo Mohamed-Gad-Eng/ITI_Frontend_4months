@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var students = [
+            { name: "Ali", age: 20, Crs: "CS" },
+            { name: "Sara", age: 22, Crs: "Math" },
+            { name: "Omar", age: 19, Crs: "Physics" },
+            { name: "Laila", age: 21, Crs: "CS" },
+            { name: "Hassan", age: 23, Crs: "Engineering" },
+            { name: "Mona", age: 20, Crs: "Biology" },
+            { name: "Kareem", age: 24, Crs: "Math" },
+            { name: "Noor", age: 18, Crs: "CS" }
+        ];
+
+        // 1- Display all students
+        function myPrint(array) {
+            array.forEach(function (item) {
+                document.write(`<p>Student Name: ${item.name}, Student Age: ${item.age}, Student Crs: ${item.Crs}</p>`);
+            });
+        }
+        myPrint(students);
+
+        document.write("<br><br>");
+        // 2-find and Search for a student by name and print their details.
+        function mySearch(array, _name) {
+            var arr = array.filter(function (elm) {
+                return elm.name.toLowerCase() == _name.toLowerCase()
+            })
+            myPrint(arr)
+        }
+        mySearch(students, "omar");
+
+        document.write("<br><br>");
+
+        // 3-Find how many students are in the array(count Students).
+        document.write(`The count of the students = ${students.length}`);
+        document.write("<br><br>");
+
+        // 4-Get all students who are in "CS"
+        function crsSearch(array, crsName) {
+            var arr = array.filter(function (elm) {
+                return elm.Crs.toLowerCase() == crsName.toLowerCase()
+            })
+            myPrint(arr)
+        }
+        crsSearch(students, "cs")
+
+        document.write("<br><br>");
+
+        // 5-Find youngest student
+        function youngest(array) {
+            var min = array.reduce(function (accumulator, currentValue) {
+                if (accumulator.age < currentValue.age) {
+                    return accumulator;
+                }
+                else {
+                    return currentValue;
+                }
+            })
+            document.write(`<p>Student Name: ${min.name}, Student Age: ${min.age}, Student Crs: ${min.Crs}</p>`);
+        }
+        youngest(students);
+
+        document.write("<br><br>");
+
+        // 6- Sort Students by age
+        function ageSort(array) {
+            var myCopy = structuredClone(students);
+            myCopy.sort(function (a, b) {
+                return a.age - b.age;
+            })
+            myPrint(myCopy);
+        }
+        ageSort(students);
+
+        document.write("<br><br>");
+
+        // 7-Create a new array with only student names.
+        var arr1 = students.map(function (elm) {
+            return elm.name;
+        })
+
+        // 8-Check if all students are above age  18 and return true or false 
+        var arr2 = students.map(function (elm) {
+            if (elm.age > 18) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        })
+
+        // 9-return Students Who Have the Same Crs
+        function sameCrs() {
+            var arr = students.map(function (elm) {
+                return elm.Crs;
+            })
+            var unique = new Set(arr);
+            unique.forEach(function (item) {
+                crsSearch(students, item);
+            })
+        }
+
+        sameCrs();
+
+        document.write("<br><br>");
+        // 10-Calculate the average age of all students.
+        var arr3 = students.map(function (elm) {
+            return elm.age;
+        }).reduce(function (accumulator, currentValue) {
+            return accumulator + currentValue;
+        })
+        document.write(`The average = ${arr3 / students.length}`);
+
+        document.write("<br><br>");
+
+        // 11-Sort and Find top 3 oldest students
+        function findSort(array) {
+            var myCopy = structuredClone(array);
+            myCopy.sort(function (a, b) {
+                return a.age - b.age;
+            })
+            return myCopy.slice(0, 3);
+        };
+        myPrint(findSort(students));
+
+        document.write("<br><br>");
+
+        // 12-Find if there are students with the same name
+        function sameName(array) {
+            var arr = array.map(function (elm) {
+                return elm.name;
+            })
+            var unique = new Set(arr);
+            unique.forEach(function (item) {
+                var arr1 = array.filter(function (elm) {
+                    return elm.name.toLowerCase() == item.toLowerCase()
+                })
+                if (arr1.length > 1) {
+                    myPrint(arr1)
+                }
+            })
+        }
+        sameName(students);
+
+        document.write("<br><br>");
+
+        // 13-Reverse the array without using .reverse()
+        function myReverse(array) {
+            for (var i = 0; i < array.length / 2; i++) {
+                var temp = array[i];
+                array[i] = array[array.length - i - 1];
+                array[array.length - i - 1] = temp;
+            }
+        }
+        var arr2 = structuredClone(students);
+        myReverse(arr2);
+        myPrint(arr2);
+
+        document.write("<br><br>");
+
+        // 14-Add a new property email for each student in the format: name.toLowerCase+"@iti.com"
+        function addProp(array) {
+            array.forEach(function (item) {
+                item.email = `${item.name.toLowerCase()}@iti.com`;
+            })
+        }
+        var arr3 = structuredClone(students);
+        addProp(arr3)
+        arr3.forEach(function (item) {
+            document.write(`<p>Student Name: ${item.name}, Student Age: ${item.age}, Student Crs: ${item.Crs}, Student Email: ${item.email}</p>`);
+        });
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        div{
+            border:2px solid black ;
+            background-color:pink;
+            width:450px;
+           height:450px;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="txtBtn">Load Text</button><br/><br/>
+    <button id="HTMLBtn">Load HTML</button><br/><br/>
+    <button id="api">Load Data</button><br/><br/>
+
+
+
+    <div id="mydiv">
+
+    </div>
+    
+
+    <script>
+        // AJax ==> Asynchrounous javascript and XML 
+        //xmlHTTPRequest
+        //GET 
+        // JS synchrounous 
+        //status text  , status , ready state 
+        // ready state change 
+
+        // ready state 
+        //0 : connection not opend 
+        //1:request ready client 
+        //2: send req for server 
+        //3 : server starts to respond 
+        //4: response delivered for client 
+
+        //status 
+        //1**  100:199 wait server 
+        //2**  req done 
+        //3** redirctable 
+        //4**  error 404 page not found 
+        //5** server error 
+
+        // open ("GET","serverurl",true,"user , pass ")
+        // send("")
+
+        ///////////////////////////
+
+        txtBtn=document.querySelector("#txtBtn")
+        HTMLBtn=document.querySelector("#HTMLBtn")
+        APIBTN=document.querySelector("#api")
+
+        mydiv=document.querySelector("div")
+    //    txtBtn.addEventListener("click",function(){
+
+    //      xhr=new XMLHttpRequest()
+    //      xhr.open("Get","data.txt",true)
+    //      xhr.send("")
+    //      xhr.onreadystatechange=function(){
+    //        if(xhr.readyState==4 &&xhr.status==200){
+    //        // console.log(xhr.responseText)
+    //        mydiv.style.visibility="visible";
+    //        mydiv.innerText=xhr.responseText
+
+    //        }
+
+    //      }
+
+
+
+    //    })
+
+
+    //load html from server 
+    // HTMLBtn.addEventListener("click",function(){
+
+    //      xhr=new XMLHttpRequest()
+    //      xhr.open("Get","BrowserStorage.html",true)
+    //      xhr.send("")
+    //      xhr.onreadystatechange=function(){
+    //        if(xhr.readyState==4 &&xhr.status==200){
+    //        // console.log(xhr.responseText)
+    //        mydiv.style.visibility="visible";
+    //        mydiv.innerHTML=xhr.responseText
+
+    //        }
+
+    //      }
+
+
+
+    //    })
+
+
+       /// call Data from API 
+         APIBTN.addEventListener("click",function(){
+
+         xhr=new XMLHttpRequest()
+         xhr.open("Get","https://jsonplaceholder.typicode.com/users",true)
+         xhr.send("")
+         xhr.onreadystatechange=function(){
+           if(xhr.readyState==4 &&xhr.status==200){
+          //  console.log(xhr.responseText)
+          users=JSON.parse(xhr.responseText)
+           users.forEach(function(elm ){
+              mydiv.innerHTML += elm.name+" : "+elm.username  +"<br/>"
+
+           })
+           mydiv.style.visibility="visible";
+        //    mydiv.innerHTML=xhr.responseText
+
+           }
+
+         }
+
+
+
+       })
+    </script>
+</body>
+</html>

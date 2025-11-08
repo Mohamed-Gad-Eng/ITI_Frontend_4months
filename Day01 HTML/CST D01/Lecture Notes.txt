@@ -1,0 +1,107 @@
+CST 
+HTML 
+CSS2.0
+
+=================
+Hyper Text Markup Language 
+
+Not oop Language 
+interpretation 
+interpreter 
+
+top to bottom 
+left to write 
+
+browser 
+
+predefined tags 
+<p>iti </p>
+<img/>
+<h1>
+===================================
+client 
+
+server 
+
+=======================
+http://www.facebook.com 
+==>>URI 
+www.facebook.com >> UrL
+
+HTTP : hyper Text Transfer Protocol 
+
+
+FTP 
+
+WWW : world wide web 
+
+LAN ==> Local Area Network 
+
+WAN ==> Wide Area Netwrok 
+
+WWW
+
+
+=====================
+predefined tags 
+
+not case sensitive 
+<h1></H1>
+w3c
+ small letters 
+
+<html>
+<head>
+<title></title>
+</head>
+<body>
+</body>
+
+</html>
+
+
+====================
+paired tags // couple tags 
+<p>iti </p>
+
+paired tags with attribute 
+<p align="center">iti </p>
+
+self closing tag 
+
+<img/>
+
+self closing tag 
+<img src=""/>
+
+===================================
+<p><b>iti</p></b>// error
+<p><b>iti</b></p>
+
+================================
+text
+Image 
+Table 
+Form
+
+=====================================
+NotePad 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

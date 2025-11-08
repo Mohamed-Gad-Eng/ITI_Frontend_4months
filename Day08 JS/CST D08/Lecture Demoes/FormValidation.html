@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    .error{
+        color:red;
+        background-color:lightpink;
+        font: bold 13px tahoma;
+    }
+  </style>
+</head>
+<body>
+  <form action="server.html">
+      <labal for="user"> User Name </labal>
+    <input type="text" name="user" id="user"/>
+      <labal id="usrerror">  </labal> <br/><br/>
+
+       <labal for="email"> Email </labal>
+    <input type="text" name="email" id="email"/>
+      <labal id="mailerror">  </labal><br/><br/>
+
+       <labal for="age"> Age</labal>
+    <input type="text" name="age" id="age"/>
+      <labal id="ageerror">  </labal> <br/><br/>
+
+      <input type="submit" value="Log In"/>
+
+  </form>
+
+  <script>
+    // selectors 
+    myform=document.querySelector("form")
+    user=document.querySelector("#user")
+    email=document.querySelector("#email")
+    age=document.querySelector("#age")
+    usrerror=document.querySelector("#usrerror")
+    mailerror=document.querySelector("#mailerror")
+    agerror=document.querySelector("#ageerror")
+
+myform.addEventListener("submit",function(e){
+      
+    e.preventDefault();
+
+    // user Validation 
+    if(user.value.trim()==""||user.value.trim().length<3){
+        usrerror.innerText="user musn't be null or less than 3 charater"
+        usrerror.classList.add("error")
+    }
+    else{
+         usrerror.innerText="";
+    }
+
+
+    // email validation 
+     if(email.value.trim()==""||!email.value.trim().includes("@")){
+        mailerror.innerText="Enter correct Email"
+        mailerror.classList.add("error")
+    }
+    else{
+         mailerror.innerText="";
+    }
+
+    // age validation 
+    
+      if(age.value.trim()==""||parseInt(age.value.trim())<20){
+        ageerror.innerText="Applicant must'nt be empty or less than 20 years "
+        ageerror.classList.add("error")
+    }
+    else{
+         ageerror.innerText="";
+    }
+        // 
+        if(usrerror.innerText=="" && mailerror.innerText=="" && ageerror.innerText==""){
+           // location.href()
+           alert("valiation Done 👍")
+           open("server.html")
+        }
+
+})
+
+
+  </script>
+</body>
+</html>

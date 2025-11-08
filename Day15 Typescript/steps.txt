@@ -1,0 +1,10 @@
+1- npm install --global typescript
+    OR --> npm init --> npm install --save-dev typescript
+
+2- create tsconfig.json
+
+3- Ctrl + Shift + p --> Configure Task (create tasks.json)
+
+4- Ctrl + Shift + B --> Build || Watch
+
+5- Do your work

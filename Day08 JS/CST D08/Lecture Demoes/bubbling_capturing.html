@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+  div{
+    border:2px solid black ;
+    width:600px ;
+    height:500px ;
+    margin:10px auto;
+    background-color:pink;
+   
+  }
+  ul{
+     border:2px solid black ;
+    width:400px ;
+    height:300px ;
+    background-color:lightblue;
+    margin:100px;
+
+  }
+  li{
+     border:2px solid black ;
+     background-color:lightyellow;
+     margin:10px;
+     padding:10px;
+  }
+  </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li>Elm1</li>
+        <li>Elm2</li>
+        <li>Elm3</li>
+    </ul>
+</div>
+
+    <script>
+      div=document.querySelector("div")
+      ul=document.querySelector("ul")
+      lis=document.getElementsByTagName("li")
+
+//       for(i=0;i<lis.length;i++){
+//          lis[i].addEventListener("click",function(e){
+//           alert("LI Clicked")
+//           e.stopPropagation();
+//          })
+//       }
+
+
+//       //ul 
+//       ul.addEventListener('click',function(e){
+//           alert("UL Clicked")
+//  e.stopPropagation();
+//       })
+//       // div 
+
+//         div.addEventListener('click',function(){
+//           alert("div Clicked")
+
+//       })
+
+
+             // capturing 
+
+    //       for(i=0;i<lis.length;i++){
+    //      lis[i].addEventListener("click",function(){
+    //       alert("LI Clicked")
+         
+    //      },true)
+    //   }
+
+
+    //   //ul 
+    //   ul.addEventListener('click',function(e){
+    //       alert("UL Clicked")
+
+    //   },true)
+    //   // div 
+
+    //  div.addEventListener('click',function(){
+    //      alert("div Clicked")
+
+    //   },true) 
+    
+    
+
+    // 
+     for(i=0;i<lis.length;i++){
+         lis[i].addEventListener("click",function(e){
+        alert("LI Clicked")   
+          e.stopPropagation();
+        })
+           }
+
+
+
+//       //ul 
+
+ liobj=document.createElement("li")
+ liobj.innerText="New Element"
+ ul.appendChild(liobj)
+
+
+     ul.addEventListener('click',function(e){
+        // alert("UL Clicked")
+
+       e.stopPropagation();
+      // e.target.tagName// >>> return <li>New Element</li>
+     // console.log( e.target.tagName)//LI
+      // console.log( e.target)
+      // console.log( e.target.outerHTML)//"<li>New Element</li>"
+
+
+       if(e.target.tagName=="LI"){
+        alert(e.target.innerText)
+      }
+       })
+    </script>
+</body>
+</html>

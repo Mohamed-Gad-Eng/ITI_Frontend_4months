@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+    // var x; 
+  //  console.log(x)// undefined 
+    var x=10; // hoisting 
+  //  console.log(x)// 10 
+
+    //  intialization = var declaration + variable assign 
+//  console.log(i)// undefined 
+//    for (var i =0;i<5;i++){
+
+
+//    }
+//  console.log(i)//5
+//  var y=100;
+//    function print(){
+//       //var y >> hoisting 
+//      console.log(y)//undefined
+//       var y=200;
+//    }
+
+    
+//    print()
+   
+  
+
+// hoisting function 
+// function statement && function Expression 
+
+// var greet=function(){ console.log("Welcome")}// hoisted 
+// greet()
+// function greet(){
+//     console.log("Welcome")
+// }
+
+
+
+// expression function 
+//  var greet  // hoisting 
+//greet()
+// var greet= function (){console.log("Welcome") }
+
+// greet()
+
+
+// greet() // hoisting 
+// function greet(){
+//     console.log("Welcome")
+// }
+
+
+// function parent(){
+//     function child(){
+//         return 100;
+//     }
+//     return child();
+// }
+
+// console.log(parent())
+
+// console.log(parent())
+// function parent(){
+//     function child(){
+//         return 100;
+//     }
+//     return child();
+// }
+
+
+
+// console.log(parent())
+// function parent(){
+//      return child();
+//     function child(){
+//         return 100;
+//     }
+   
+// }
+
+console.log(parent())
+function parent(){
+     return child();
+    child= function(){// expression fun
+        return 100;
+    }
+   
+}
+
+
+
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

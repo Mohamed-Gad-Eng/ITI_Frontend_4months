@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   
+</head>
+<body>
+    <script>
+        // window
+        // location
+        //window.location
+        //location.href
+        //location.port
+        //location.protocol
+        //location.host
+        //////
+        //navigator.appCodeName
+        //navigator.appName
+        //navigator.appVersion
+        //navigator.deviceMemory
+
+        ///////////////////////
+
+        // document 
+        document
+        document.title = "DOM"
+        // document.write("Front End ")
+        //document.write("<h1 align='center'> Front End</h1>")
+        //document.write("<h1 align='center'> <font color='red'>Front End</font></h1>")
+
+        //document.bgColor = "cyan";
+        //document.fgColor = "red";
+       // document.body.style.backgroundColor = "magenta"
+        x = 100;
+
+
+        // prompt 
+        //alert("hi")
+        //prompt()
+        //confirm()
+
+        //innerWidth
+        //innerHeight
+
+        //var ref = open("User_Defined_Object.html", "child", "width=300,height=300")
+        ////opener
+        ////name
+        //ref.closed;
+        //ref.close()
+
+
+
+
+        //location.href.split("?")[1].split("&")[0].split("=")
+        //location.search
+
+        //  Intervals
+
+        //setInterval(loop, 1000)
+
+        //function loop() {
+        //    console.log("%c JS ","color:lightgreen")
+        //}
+
+
+
+        //setInterval(function () {
+        //    console.log("%c JS ", "color:lightgreen")
+        //}, 1000)
+
+
+        //setTimeout(function () {
+        //    console.log("%c JS ", "color:lightgreen")
+        //},4000)
+
+
+
+       //timerID= setInterval(function () {
+       //     console.log("%c JS ", "color:lightgreen")
+       //}, 1000)
+
+        // clearInterval(timerID)
+
+
+        setInterval(function () {
+            dt = new Date();
+            document.title = dt.toLocaleTimeString("Ar-Eg")
+        },1000)
+
+
+    </script>
+    <p>Information technology institute</p>
+
+    <form action="User_Defined_Object.html">
+        <input type="text" placeholder="enter user Name" name="usr" /><br /><br />
+        <input type="password" placeholder="enter user password" name="pass" /><br /><br />
+
+        <input type="submit" value="login" />
+
+    </form>
+</body>
+</html>

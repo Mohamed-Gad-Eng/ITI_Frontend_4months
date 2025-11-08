@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<body>
+    <form action="Events.html">
+        <input type="text" name="user" /><br /><br />
+        <input type="password" name="pass" /><br /><br />
+        <input type="submit" value="logIn" id="logbtn"/>
+
+
+    </form>
+    
+    <a href="http://www.google.com" id="anch">google</a>
+    <script>
+
+        logbtn.addEventListener('click', function (e) {
+            e.preventDefault()
+            alert("Logged In")
+
+        })
+
+        anch.addEventListener('click', function (e) {
+            e.preventDefault()
+            alert(this.href)
+        })
+    </script>
+
+</body>
+</html>

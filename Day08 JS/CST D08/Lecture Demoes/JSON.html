@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        obj={_name:"ali",age:25}// js object 
+        json='{"_name":ali,"age":22}'// javascript object notation 
+        // send data server >> json 
+      //  JSON.stringify()
+        // get data from server << json 
+        //JSON.parse();
+        var std=`{
+            "name":"ali",
+            "age":20,
+            "success":true,
+            "crs":"js"
+        }`
+        // JSON.stringify(std)//'{"name":"ali","age":20,"success":true,"crs":"js"}'
+        // console.log(std)
+        myobj= JSON.parse(std)
+        myobj.mail=myobj.name+"@iti.com";
+         JSON.stringify( myobj)// to json 
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+Text 
+Image 
+Tables 
+Forms 
++++++++++
+ Links 
+Hyper Text markup language 
+
+plain Text 
+
+hyper Text 
+
+default event 
+
+href = uri 
+
+<a>content </a> // plain text 
+ href=URI 
+
+External Link  ==== > 
+Internal Link   ====> 
+NamedAnchor Link 
+Mail Link 
+
+======================
+absluote Path 
+relative path 
+
+===============================
+
+to:Ahmed@iti.com 
+cc(carpon copy):mhmd@iti.com 
+bcc(blind carpon copy):  AbdAllah@iti.com 
+subject: lab solution 
+body:
+
+
+====================================
+to: ahmed mail
+cc(carpon copy): mahmoud
+bcc(blind carpon copy):  manager Mail 
+subject:  
+body:
+
+<a href="mailto:ali@iti.com?cc=mona@iti.com&bcc=dina@iti.com">Send mail</a>
+
+
+
+
+
+
+
+
+
+
+
+
+table  <table>
+
+rows  <tr>
+
+cell <td>  <th>
+
+
+
+collect data 
+
+
+<form>
+method  get post 
+
+action   server.html 
+
+<input type=>
+text
+password
+email 
+file 
+number 
+date
+button 
+radio
+checkbox 
+submit 
+reset 
+
+
+select 
+text area 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

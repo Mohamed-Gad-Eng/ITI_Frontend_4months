@@ -1,0 +1,16 @@
+var students = [
+  { name: "Ali", age: 20, Crs: "CS" },
+  { name: "Sara", age: 22, Crs: "Math" },
+  { name: "Omar", age: 19, Crs: "Physics" },
+  { name: "Laila", age: 21, Crs: "CS" },
+  { name: "Hassan", age: 23, Crs: "Engineering" },
+  { name: "Mona", age: 20, Crs: "Biology" },
+  { name: "Kareem", age: 24, Crs: "Math" },
+  { name: "Noor", age: 18, Crs: "CS" }
+];
+
+given this Array
+
+1- list Students in table with header of name , age , course 
+2- enable text form for user to search for user by  name or course 
+3- add dropdown list to sort students by age and by name and reflect result on table   

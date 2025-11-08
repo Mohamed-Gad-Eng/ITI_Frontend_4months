@@ -1,0 +1,49 @@
+Having this array 
+const students = [
+  { id: 1, name: "Ali", grade: 80, city: "Cairo" },
+  { id: 2, name: "Sara", grade: 92, city: "Alexandria" },
+  { id: 3, name: "Omar", grade: 74, city: "Giza" },
+  { id: 4, name: "Mona", grade: 88, city: "Cairo" }
+];
+
+do the following using arrow function 
+1- Create a new array that contains only the names of students using arrow functions.
+
+2-Get all students who have a grade greater than or equal to 85.(filter)
+
+3-Find the student whose name is "Sara".( list object details)
+
+4-Calculate the average grade of all students.(reduce)
+
+5-Sort students by grade (descending) using arrow function in sort.
+
+6-Print Students using forEach arr fun  
+
+7-Make a shallow copy of the students array using spread.
+
+8-Add a new student object into the array using spread.
+
+9-Suppose you have another array of students, merge it with the first array using spread
+
+10- Update "Omar"’s grade to 95 without mutating the original array (use spread inside map).
+
+11-Remove the student with id = 2 using filter + spread.
+
+12- Take out the first student and keep the rest in another array using destructuring + spread
+
+13- destruct and Extract the first student into a variable, and keep the rest into another array using rest 
+
+14- Skip the first two students and store the third one in a variable.
+
+
+
+______________________________________________________
+Assigment 2 
+
+Write a function printNames(...names) that accepts any number of student objects  and prints their name using spread operator .
+______________________________________________________
+
+Ass 3 
+
+- try all cases in lecture to confirm diffrences between var , let , const 
+

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .addDo {
+            width: 310px;
+            margin: 20px auto;
+        }
+
+        .addDo .add {
+            width: 240px;
+            height: 30px;
+            border-radius: 15px;
+        }
+
+        .addDo .add-but {
+            width: 50px;
+            height: 30px;
+            border-radius: 15px;
+        }
+
+        /* .res {
+            width: 310px;
+            margin: 20px auto;
+            border: 2px solid red;
+            border-radius: 15px;
+        }
+
+        .res .added {
+            width: 60px;
+            height: 30px;
+            border-radius: 15px;
+            margin: 10px;
+        }
+
+        .res h2 {
+            width: 180px;
+            padding: 10px 20px;
+            margin: 0;
+            display: inline-block;
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div class="addDo">
+            <input type="text" id="add" class="add" placeholder="Enter your item">
+            <button type="button" class="add-but">
+                Add
+            </button>
+        </div>
+        <!-- <div class="res" style="width: 310px;
+            margin: 20px auto;
+            border: 2px solid red;
+            border-radius: 15px;">
+            <h2 style="            width: 180px;
+            padding: 10px 20px;
+            margin: 0;
+            display: inline-block;">i am an item</h2>
+            <button type="button" class="deleted" style="            width: 60px;
+            height: 30px;
+            border-radius: 15px;
+            margin: 10px;">
+                Delete
+            </button>
+        </div> -->
+    </div>
+
+
+    <script>
+        var done = document.querySelector(".add-but");
+        var text = document.querySelector("#add");
+        var myMain = document.querySelector("#main");
+
+        var counter = 0;
+        done.addEventListener("click", function () {
+
+            txt = text.value;
+            if (txt != "") {
+                myMain.insertAdjacentHTML(
+                    "beforeend",
+                    `<div class="res" style="width: 310px;
+                margin: 20px auto;
+                border: 2px solid red;
+                border-radius: 15px;">
+                <h2 style="            width: 180px;
+                padding: 10px 20px;
+                margin: 0;
+                display: inline-block;">${txt}</h2>
+                <button type="button" class="added" style=" width: 60px;
+                height: 30px;
+                border-radius: 15px;
+                margin: 10px;">
+                    Delete
+                </button>
+                </div>`
+                );
+                text.value = "";
+            }
+
+            var newDiv = myMain.lastElementChild;
+            var mydel = newDiv.querySelector(".added");
+            // var mydels = document.querySelectorAll(".added");
+            // var mydiv = document.querySelectorAll(".res");
+
+            mydels.addEventListener("click", function (e) {
+                e.stopPropagation();
+                newDiv.remove();
+            })
+
+            newDiv.addEventListener("click", function () {
+                var heading = this.querySelector("h2");
+                heading.style.textDecoration =
+                    heading.style.textDecoration === "line-through" ? "none" : "line-through";
+            })
+
+        });
+
+    </script>
+</body>
+
+</html>

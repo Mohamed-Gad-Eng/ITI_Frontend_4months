@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <style>
+    div{
+        border:2px solid black ;
+        width:2.5cm ;
+        height:2.5cm;
+        background-color :pink;
+    }
+ </style>
+</head>
+<body>
+    <h1 align="center">Server Page</h1>
+
+    <div>
+
+    </div>
+    <script>
+        div=document.querySelector("div")
+      // div.innerText=document.cookie;
+      div.innerText=localStorage.getItem("user") + " : "+localStorage.getItem("pass")
+    </script>
+</body>
+</html>

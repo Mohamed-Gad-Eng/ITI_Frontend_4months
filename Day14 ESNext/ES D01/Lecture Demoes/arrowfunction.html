@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // arrowfuntion || lamdaexpression 
+        // not haave argument , this lexial 
+        // not used as constructor function 
+        // simplify function 
+        // function print(){
+        //     return "Hi"
+        // }// function statement 
+
+      //  let print=function(){return "Hi"}// expression fun 
+
+     //   let print=()=>{return "Hi"}
+
+       // let print=()=> "Hi"
+
+
+      //  print()
+
+     let doub=(num)=>{return num*2}
+      //let doub=(num)=> num*2
+
+      // let doub=num=> num*2
+
+    //   let Student =function(_age,_grade){
+    //        this.age=_age;
+    //        this.grade=_grade
+    //   }// expression fun can be used as const fun 
+    //   let std=new Student(20,90)
+
+
+    //   let Student =(_age,_grade)=>{
+    //        this.age=_age;
+    //        this.grade=_grade
+    //   }// arrow fun can'nt be used as const fun 
+    //   let std=new Student(20,90)
+
+
+//       function showargs(){
+//          console.log(arguments)
+//       }
+// showargs(10,20,30)
+ 
+
+
+//        showargs=()=>{
+//          console.log(arguments)
+//       }
+// showargs(10,20,30) // arrow fun hasn't arguments 
+  let std={
+    name:"aly",
+    age:20,
+    crs:"js",
+    // print:function(){
+    //     console.log(this)
+    //     console.log(this.name +" : "+ this.crs)
+    // }
+     print:()=>{
+        //console.log(this)
+        console.log(this.age +" : "+ this.crs)// this lexial
+    }
+
+  }
+
+
+//    function Person(){
+//     this.id=100;
+//     //that=this;
+//     setInterval(function(){
+//          // console.log(this)
+//         this.id++;
+//       // that.id++
+//       console.log(this.id)
+//       // console.log(that.id)
+
+      
+//     }.bind(this),1000)
+//    }
+
+
+
+
+    function Person(){
+    this.id=100;
+  
+    setInterval(()=>{
+       
+        this.id++;
+      
+      console.log(this.id)
+    
+
+      
+    },1000)
+   }
+
+   new Person()
+    </script>
+</body>
+</html>
