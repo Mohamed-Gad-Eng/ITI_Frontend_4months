@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Audio Element</title>
+    </head>
+    <body>
+        <audio src="Super Mario Bros (NES) Music - Overworld Theme.mp3"
+            controls></audio>
+            <br>
+        
+            time: <input type="range" min="0" value="0" oninput="changeAudioTime()">
+
+            <br>
+            <button onclick="playAudio()">play</button>
+            <button onclick="stopAudio()">stop</button>
+
+        <script src="05-audio.js"></script>
+    </body>
+</html>

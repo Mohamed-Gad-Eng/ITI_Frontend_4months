@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.back {
+    background-color: #eff0f4;
+    height: 35px;
+    padding: 10px 0px;
+}
+
+.nav {
+    border-bottom: 1px solid red;
+    background-color: white;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.my-cards {
+    margin: 30px 0px 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.my-cards .card {
+    border: 1px solid red;
+    border-radius: 5px;
+    width: 250px;
+    margin: 10px;
+}
+
+div.discription p {
+    display: inline-block;
+    margin: auto;
+}
+
+div.discription {
+    margin: 20px auto 0px;
+    height: 70px;
+    text-align: center;
+}
+
+.my-cards .card .card-button {
+    margin: 15px;
+}
+
+.card .card-button button {
+    margin-top: 5px;
+    color: white;
+    background-color: #2d3e50;
+    width: 100%;
+}
+
+.card-button button {
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.features {
+    background-color: #2d3e50;
+    min-height: 440px;
+    text-align: center;
+}
+
+.features h3 {
+    color: #e84c3d;
+    display: inline-block;
+    margin: 70px auto 20px;
+    font-size: 25px;
+}
+
+.features p:nth-child(2) {
+    color: white;
+    font-size: small;
+}
+
+.footer-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-cards .card{
+    background-color: white;
+    border-radius: 5px;
+    width: 180px;
+    height: 200px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer-cards .card .circle{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #e84c3d;
+    margin: 10px auto;
+}
+
+.footer-cards .card h4{
+    color: #2d3e50;
+}
+
+.footer-cards .card p{
+    color: gray;
+    font-size: 10px;
+}

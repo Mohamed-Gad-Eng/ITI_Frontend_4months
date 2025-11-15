@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <style>
+        body {
+            margin: 0;
+            text-align: center;
+        }
+
+        #colorPick{
+            height: 30px;
+        }
+
+        .container{
+            width: 800px;
+            height: 430px;
+            border: 1px solid red;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="color">
+            <input type="color" id="colorPick">
+            <button id="myButton">Click Me</button>
+        </div>
+        <canvas width="800" height="400"></canvas>
+    </div>
+
+    <script>
+        var canvas = document.querySelector("canvas");
+        const myColorPicker = document.getElementById('colorPick');
+        const myButton = document.getElementById('myButton');
+
+        var ctx = canvas.getContext("2d");
+
+        myButton.addEventListener("click", () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            let color = myColorPicker.value;
+            for (let i = 0; i < 200; i++) {
+                let x = Math.floor(Math.random() * 800);
+                let y = Math.floor(Math.random() * 600);
+                let radius = Math.floor(Math.random() * 60 + 5);
+
+                ctx.beginPath();
+                ctx.arc(x, y, radius, 0, 2 * Math.PI);
+                ctx.strokeStyle = color;
+                ctx.stroke();
+            }
+        })
+
+    </script>
+</body>
+
+</html>

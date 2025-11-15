@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+        class Person{
+         
+            //fields >> public || private 
+            // construcror 
+            // methods override 
+            // prop set Get
+            // instance members 
+            // static members 
+            //private member 
+            #id;
+            #name;
+            static x="welcome to static member"
+            static obj=0;
+
+           constructor(_id,_name){
+            // this.#id=_id;
+            // this.#name=_name
+            this.ID=_id;
+            this.Name=_name;
+            Person.obj++;
+           }
+            static objcount(){
+                 return Person.obj;
+            }
+
+           //considefunction
+           print(){
+           // console.log(`ID =${this.#id} Name= ${this.#name}`)
+          // console.log(`ID =${this.ID} Name= ${this.Name}`)
+          return(`ID =${this.ID} Name= ${this.Name}`)
+           }
+           
+           // settrs , Getters 
+//         setID(_id){
+//              if(_id<0){
+//                 console.log("invalid id value")
+//              }
+//              else {
+//                 this.#id=_id
+//              }
+
+//         }
+
+//          getID(){
+//             return this.#id;
+//          }
+//   setName(_name){
+//              if(_name.length<3){
+//                 console.log("invalid name value")
+//              }
+//              else {
+//                 this.#name=_name
+//              }
+
+//         }
+
+//          getName(){
+//             return this.#name;
+//          }
+          // setters and getters >> security for class field 
+
+          //properties >> declaration as function  call as variable 
+
+     set ID(_id){
+             if(_id<0){
+                console.log("invalid id value")
+             }
+             else {
+                this.#id=_id
+             }
+
+        }
+
+        get ID(){
+            return this.#id;
+        }
+
+
+          set Name(_name){
+             if(_name.length<3){
+                console.log("invalid Name value")
+             }
+             else {
+                this.#name=_name
+             }
+
+        }
+
+        get Name(){
+            return this.#name;
+        }
+
+         // override toString
+          toString(){
+            return this.print()
+          }
+   valueOf(){
+    return this.ID;
+   }
+
+
+
+        }
+     //new Person()
+  //  let  p=new Person(10,"Aly")
+  
+ //p.name="doaa" // name private
+ //console.log(p)
+  //console.log(p)
+   // p.id// getting 
+  // p.print()
+
+  
+   // let p=new Person(200,"Diaa")
+    let p1=new Person(200,"aya")
+    let p2=new Person(400,"Ahmed")
+      let p3=new Person(200,"aya")
+    let p4=new Person(400,"Ahmed")
+   // document.write(p1+p2)
+     document.write(p1+p2)
+    </script>
+</body>
+</html>

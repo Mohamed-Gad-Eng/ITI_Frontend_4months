@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+    // alert("Welcome ")
+    //     console.log("%c Script Begin","color:red")
+      
+    //     console.log("%c Data LOaded","color:lightgreen")
+     
+    //   console.log("%c Script End","color:magenta")
+
+
+
+    //   console.log("%c Script Begin","color:red")
+    //   setTimeout(()=>{  // async code 
+    //     console.log("%c Data LOaded","color:lightgreen")
+    //   },3000)
+    //   console.log("%c Script End","color:magenta")// Stack
+
+
+    ////////////////////////////////////////////////////
+      console.log("%c Script Begin","color:red") // stack
+     function loaddata(){
+         setTimeout(()=>{  // async code 
+       return "Data Loaded"
+      },3000)
+     }
+
+     // for loop from 1 to billion  stack 
+     let result=loaddata()// stack 
+     console.log(result)
+      console.log("%c Script End","color:magenta")// Stac
+
+      
+    </script>
+</head>
+<body>
+    <p>Information Technology institutes</p>
+</body>
+</html>

@@ -1,0 +1,15 @@
+body, html {
+    width: 500px;
+    height: 200px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+canvas {
+    border: 1px solid black;
+}
+.controls {
+    margin: 10px;
+}

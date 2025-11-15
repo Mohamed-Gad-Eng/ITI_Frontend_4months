@@ -1,0 +1,66 @@
+.static-position {
+  height: 200px;
+  background-color: red;
+  position: static;
+  top: 50px;
+}
+
+/* relative
+can (right - left- top -bottom)
+*/
+.relative-position {
+  height: 400px;
+  width: 400px;
+  background-color: blue;
+  position: relative;
+  /* overflow: scroll; */
+  /* overflow-x: hidden; */
+  /* overflow-y: hidden; */
+}
+
+/*
+absolute related to nearest relative parent */
+.absolute-position {
+  background-color: yellow;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+}
+
+.fixed-position {
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.fixed-position-2 {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.sticky-div {
+  background-color: lightskyblue;
+  width: 200px;
+  margin: 0 auto;
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.sticky-position {
+  background-color: red;
+  position: sticky;
+  top: 10px;
+}
+
+.sticky-position-2 {
+  background-color: orange;
+  position: sticky;
+  top: 10px;
+}

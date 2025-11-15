@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+             #id;
+            #name;
+           
+           constructor(_id,_name){
+            this.ID=_id;
+            this.Name=_name;
+           
+           }
+            print(){
+          return(`ID =${this.ID} Name= ${this.Name}`)
+           }
+
+           set ID(_id){
+             if(_id<0){
+                console.log("invalid id value")
+             }
+             else {
+                this.#id=_id
+             }
+
+        }
+
+        get ID(){
+            return this.#id;
+        }
+
+
+          set Name(_name){
+             if(_name.length<3){
+                console.log("invalid Name value")
+             }
+             else {
+                this.#name=_name
+             }
+
+        }
+
+        get Name(){
+            return this.#name;
+        }
+        }
+
+        class Employee extends Person{
+            
+            constructor(_id,_name,_salary) {
+                super(_id,_name);// chaining 
+                this.salary=_salary;
+                
+            }
+            // override print 
+             print(){
+          return(`${super.print()} salary = ${this.salary}`)
+           }
+        }
+
+       let  emp=new Employee(100,"aly",2000)
+       emp instanceof Person // true 
+       emp.print();
+
+       let p=new Person (400,"doaa")
+       p instanceof Employee
+    </script>
+    
+</body>
+</html>

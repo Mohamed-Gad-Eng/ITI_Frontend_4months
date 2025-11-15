@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // async 
+        // await +async 
+
+    //    async function fun(){
+    //         // return new Promise((resolve,reject)=>{
+    //         //          resolve (100)
+
+    //         // })
+    //          return 1000;
+    //     }//function
+    //     fun().then((num)=>{
+    //         console.log(num)
+    //     })
+
+
+        //////////  await 
+
+
+        async function fun(){
+          let  prom = new Promise((resolve,reject)=>{
+                     setTimeout(()=>{
+                        resolve ("Done")
+                     },3000)
+
+             })
+             let result=await prom;
+             return result
+             
+        }//function
+        // fun().then((msg)=>{
+        //     console.log(msg)
+        //     return msg
+        // })
+        fun().then((msg)=>{console.log(msg)})
+
+    </script>
+</body>
+</html>

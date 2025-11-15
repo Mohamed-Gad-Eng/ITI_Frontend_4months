@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function doSomeThing(){
+            return new  Promise((resolve)=>{
+            let arr=[200,10,50,700,52,60]
+            setTimeout(()=>{
+                resolve(Math.max(...arr))
+
+            },3000)
+
+            })
+        }
+        doSomeThing().then((num)=>{
+            console.log(num)
+            return num*2; // implicit prome 
+            // if you return value from async code >> use explicit promise 
+        })
+        .then((num)=>{console.log(num)})
+    </script>
+</body>
+</html>

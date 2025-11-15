@@ -1,0 +1,22 @@
+ - Classes 
+ - Modules 
+
+ classes 
+ - classes not accessed before declaration 
+ construcor fun >> call as function || create object using new 
+ - public , private 
+ - class accessros set , get 
+ - conside function   funname(){}
+ - static member  || type member >> calling from class 
+ - multiinheritance 
+
+
+ =====================
+ 3 statigies for js running 
+ 1- traditional <script>
+  interpreter loadhtml loadscript  excute script
+async
+  interpreter >>> loadhtml >>loadscript >> loadhtml >>excute script
+
+  defer 
+  loadhtml >> loadjs >> loadhtml >> excute js 

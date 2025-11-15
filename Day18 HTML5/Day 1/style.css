@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+}
+.box {
+  width: 150px;
+  height: 150px;
+  background-color: red;
+}
+
+.box:nth-child(odd) {
+  background-color: blue;
+}
+
+.container {
+  height: 700px;
+  background-color: lightblue;
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+
+  /* short hand for direction and wrap */
+  flex-flow: row wrap;
+
+  /* gap: 12px; */
+  /* justify-content -> main axis */
+  justify-content: flex-start;
+  justify-content: flex-end;
+  justify-content: center;
+  justify-content: space-between;
+  justify-content: space-evenly;
+  justify-content: space-around;
+  justify-content: flex-start;
+
+
+  /* align-items -> cross axis */
+  /* align-items: stretch;
+  align-items: flex-start;
+  align-items: flex-end;
+  align-items: center; */
+
+  /* align-content -> wrap */
+  /* align-content: space-around; */
+}
+
+
+
+.specific{
+  background-color: yellow !important;
+  /* order: 1; */
+  flex-grow: 1;
+}
+
+
+
+
+
+/*  
+inline style
+id
+class
+tag
+
+
+
+(EXTERNAL STYLE == INTERNAL STYLE)
+*/
+
+
+
+/* (id , className , tagName) */
+
+
+.parent-div #id-div{
+  background-color: red;
+}
+
+.class-div{
+  background-color: blue;
+}
+
+.parent-div .class-div{
+  background-color: pink;
+}
+
+
+
+/* div{
+  background-color: green;
+} */

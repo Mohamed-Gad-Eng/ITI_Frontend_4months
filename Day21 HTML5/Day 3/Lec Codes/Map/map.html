@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Simple Markers Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <style>
+      #map {
+        height: 100%;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&v=weekly"
+      defer
+    ></script>
+    <script>
+      function initMap(lat, lon) {
+        const myLatLng = { lat: lat, lng: lon };
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 14,
+          center: myLatLng,
+        });
+
+        new google.maps.Marker({
+          position: myLatLng,
+          map,
+          title: "Hello World!",
+        });
+      }
+
+      window.initMap = initMap;
+
+      navigator.geolocation.getCurrentPosition(function(obj){
+        initMap(obj.coords.latitude, obj.coords.longitude)
+      })
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media player</title>
+
+    <style>
+        .player {
+            width: 900px;
+            height: 200px;
+            background-color: antiquewhite;
+            border: 2px solid black;
+            margin: 50px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .img {
+            height: 200px;
+            aspect-ratio: 16 / 9;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .controls {
+            text-align: center;
+        }
+
+        #range {
+            appearance: none;
+            display: block;
+            width: 250px;
+            background: #d3d3d3;
+            height: 10px;
+            outline: none;
+            border-top: 1px solid #878080;
+            border-bottom: 1px solid #878080;
+            border-radius: 10px;
+            opacity: 0.7;
+            transition: opacity .2s;
+            margin-bottom: 10px;
+        }
+
+        #range::-webkit-slider-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #04AA6D;
+            cursor: pointer;
+        }
+
+        #range:hover {
+            opacity: 1;
+        }
+
+        button {
+            height: 30px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:nth-child(2) {
+            width: 3rem;
+        }
+
+        button:nth-child(3) {
+            width: 4rem;
+        }
+
+        button:nth-child(4) {
+            width: 3rem;
+        }
+
+        .mySongs {
+            /* display: flex; */
+            align-items: center;
+            background-color: antiquewhite;
+            border: 3px solid black;
+            margin: 50px auto;
+            width: 900px;
+        }
+
+        .mySongs .song {
+            border-bottom: 3px solid black;
+            padding: 20px;
+            display: block;
+            cursor: pointer;
+        }
+
+        .mySongs .song:nth-child(2n) {
+            background-color: #878080;
+        }
+
+        .mySongs .song.highlighted {
+            background-color: rgb(233, 3, 3);
+        }
+
+        .mySongs .song:last-child {
+            border-bottom: none;
+        }
+
+        .mySongs .song p {
+            margin: 0;
+            height: 20px;
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="player">
+        <div class="img">
+            <img src="/assets/pic1.jpeg" alt="">
+        </div>
+        <audio id="myAudio">
+            <source src="/assets/song1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="controls">
+            <input id="range" type="range" min="0" value="0" oninput="changeAudioTime()">
+            <button onclick="playAudio()">play</button>
+            <button onclick="pauseAudio()">pause</button>
+            <button onclick="stopAudio()">stop</button>
+        </div>
+    </div>
+    <div class="mySongs">
+        <!-- <div class="song">
+            <p>Super Mario</p>
+        </div>
+        <div class="song">
+            <p>Lose you to find me</p>
+        </div>
+        <div class="song">
+            <p>Bad Guy</p>
+        </div>
+        <div class="song">
+            <p>Mel Bedaya</p>
+        </div> -->
+    </div>
+
+    <script>
+        var audioTag = document.getElementById("myAudio");
+        var range = document.getElementById("range");
+
+        audioTag.addEventListener("timeupdate", (e) => {
+            range.value = audioTag.currentTime;
+        })
+
+        window.addEventListener("load", () => {
+            range.setAttribute("max", audioTag.duration);
+        })
+
+        function changeAudioTime() {
+            audioTag.currentTime = range.value;
+        }
+
+        function playAudio() {
+            audioTag.play();
+        }
+
+        function pauseAudio() {
+            audioTag.pause();
+        }
+
+        function stopAudio() {
+            audioTag.pause();
+            audioTag.currentTime = 0;
+            range.value = 0;
+        }
+
+        let myArray = ["Sia LSD - Genius ft. Sia, Diplo, Labrinth", "LSD - Thunderclouds (Official Video) ft. Sia, Diplo, Labrinth", "Elastic Heart ft. Sia", "Super Mario"]
+        var mySongs = document.querySelector(".mySongs");
+        var audioSrc = document.querySelector("source");
+var myPic = document.querySelector("img");
+
+        myArray.forEach((ele, i) => {
+            const newDiv = document.createElement("div");
+            newDiv.className = "song";
+            const newP = document.createElement("p");
+            newP.innerHTML = ele;
+            newDiv.appendChild(newP);
+            mySongs.appendChild(newDiv);
+
+            newDiv.addEventListener("click", () => {
+                audioSrc.src = `assets/song${i + 1}.mp3`;
+                myPic.src = `assets/pic${i + 1}.jpeg`;
+                audioTag.load(); 
+                playAudio();
+            })
+
+            newDiv.addEventListener("mouseover", () => {
+                newDiv.classList.add("highlighted");
+            })
+
+            newDiv.addEventListener("mouseout", () => {
+                newDiv.classList.remove("highlighted");
+            })
+        });
+    </script>
+</body>
+
+</html>

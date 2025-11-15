@@ -1,0 +1,24 @@
+Async Code 
+js sync 
+- js engine 
+- sync or async managmentin memory 
+
+Nature Async Code 
+
+
+GEC 
+
+1- Parsing 
+  AST (Abstraction Syntax Tree)
+tokens 
+
+2- interpreter 
+//var  x 
+console.log(x)// undefined 
+var x=10
+
+3- compiler || optimizer 
+optimize 
+
+cashing fun 
+

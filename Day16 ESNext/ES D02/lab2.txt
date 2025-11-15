@@ -1,0 +1,65 @@
+First Task:-
+
+1- Create a base class Person with properties: name and age.
+2-Create a subclass Teacher with property subject and method teach().
+
+3-Create a subclass Student with property major and method study().
+
+4-Create objects of Teacher and Student, then call their methods.
+5-override a method introduce() in both Teacher and Student.
+
+________________________________________________
+Second Task:-
+
+1-Create a base class Shape with a method calcArea().
+
+2-Create subclasses Rectangle and Circle, and override the calcArea() method in each.
+
+3-Create an array of different shapes (both rectangles and circles).
+
+4-Loop through the array and calculate the area  shapes.
+
+___________________________________
+Third Task:-
+
+--------Module 1: employee.js---------
+
+1-Create a class Employee with properties: firstName, lastName, age, salary.
+
+2-Add a method to class  getFullName() that returns "FirstName LastName".
+
+3- out class Export an array departments with some department names (["IT","HR","Finance","Sales"]).
+
+
+--------Module 2: employeeOps.js------
+
+1-Import the Employee class.
+
+2- Create functions to:
+
+   1-Add employee(s) to an array.
+
+   2-Find employee by name.
+
+   3-Increase salary for an employee.
+
+
+
+---------Main File: index.js--------
+
+1- Import everything from both modules.
+
+2-Create a few employees, store them in an array.
+
+3-Print all employees’ info on Document not console.
+
+----------------------------------
+ create class veichle (name, speed, color) and sub classes like bike ,car
+  enable function in sub classes name it move
+  while calling it car,bike move to right if car or bike  arrived to right of page it turn to left
+each of them moved by its speed .
+
+
+
+
+

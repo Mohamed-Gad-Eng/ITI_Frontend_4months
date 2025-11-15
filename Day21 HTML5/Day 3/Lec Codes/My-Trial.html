@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moving Circle Trail</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="myCanvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Circle properties
+    let x = 100;
+    let y = 100;
+    let dx = 3;  // velocity X
+    let dy = 2;  // velocity Y
+    let radius = 20;
+    let hue = 0; // color that changes gradually
+
+    function animate() {
+      // Draw a semi-transparent rectangle to create the "trail" effect
+      ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Update color
+      hue += 2;
+      const color = `hsl(${hue}, 100%, 50%)`;
+
+      // Draw the circle
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
+      ctx.fillStyle = color;
+      ctx.fill();
+
+      // Move the circle
+      x += dx;
+      y += dy;
+
+      // Bounce off walls
+      if (x + radius > canvas.width || x - radius < 0) dx = -dx;
+      if (y + radius > canvas.height || y - radius < 0) dy = -dy;
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+</body>
+</html>
+

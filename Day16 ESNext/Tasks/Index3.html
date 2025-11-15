@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .myDiv {
+        width: 100%;
+        height: 300px;
+        background-color: rgb(82, 246, 147);
+        border: 5px solid red;
+        border-radius: 10px;
+        padding: 30px 0px;
+        position: relative;
+    }
+
+    .bike {
+        width: 100px;
+        height: 70px;
+        display: block;
+        position: absolute;
+        left: 0;
+        /* left: calc(100% - 100px); */
+    }
+
+    .car {
+        width: 150px;
+        height: 130px;
+        display: block;
+        position: absolute;
+        left: -7px;
+        /* left: calc(100% - 138px); */
+        margin-top: 20px;
+    }
+</style>
+
+<body>
+    <div class="myDiv">
+        <img src="Lovepik_com-401180390-cool-sports-car.png" alt="a sports car" class="car">
+        <img src="—Pngtree—bullet bike side view_8296872.png" alt="a bike" class="bike">
+    </div>
+    <script>
+        var myCar = document.querySelector(".car")
+        var myBike = document.querySelector(".bike")
+
+        class Vehicle {
+            name;
+            speed;
+            color;
+
+            constructor(name, speed, color) {
+                this.name = name;
+                this.speed = speed;
+                this.color = color;
+            }
+        }
+
+        class Bike extends Vehicle {
+            move() {
+                const self = this;
+
+                myBike.style.transform = "scaleX(1)";
+                myBike.style.left = "0px";
+
+                // Revert direction then Go right
+                var bikeAnimate = myBike.animate({
+                    left: "calc(100% - 100px)"
+                }, 100000 / self.speed)
+
+                // Revert direction then Go left
+                bikeAnimate.onfinish = function () {
+                    myBike.style.transform = "scaleX(-1)";
+                    myBike.style.left = "calc(100% - 100px)";
+                    myBike.animate({
+                        left: "0px"
+                    }, 100000 / self.speed).onfinish = function () {           // start over the loop
+                        self.move();
+                    }
+                }
+            }
+        }
+
+        class Car extends Vehicle {
+            move() {
+                const self = this;
+
+                myCar.style.transform = "scaleX(1)";
+                myCar.style.left = "-7px";
+
+                // Revert direction then Go right
+                var carAnimate = myCar.animate({
+                    left: "calc(100% - 138px)"
+                }, 100000 / self.speed)
+
+                // Revert direction then Go left
+                carAnimate.onfinish = function () {
+                    myCar.style.transform = "scaleX(-1)";
+                    myCar.style.left = "calc(100% - 138px)";
+                    myCar.animate({
+                        left: "-7px"
+                    }, 100000 / self.speed).onfinish = function () { 
+                        self.move();          // start over the loop
+                    }
+                }
+            }
+        }
+
+        var c1 = new Car("Volvo", 100, "Blue");
+        c1.move()
+        var b1 = new Bike("Motorbike", 90, "Blue");
+        b1.move()
+        //carAnimate.reverse()
+
+    </script>
+</body>
+
+</html>

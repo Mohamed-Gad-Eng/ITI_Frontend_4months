@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Player</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="picture">
+        <img id="currentTrackImage" src="default.jpg" alt="Current Track Image">
+    </div>
+    <audio id="audio" src="track1.mp3" controls></audio>
+    <div>
+        Time: <input id="timeRange" type="range" min="0" value="0" oninput="changeAudioTime()">
+    </div>
+    <div>
+        Volume: <input id="volumeRange" type="range" min="0" max="1" step="0.01" value="1" oninput="changeAudioVolume()">
+    </div>
+    <div>
+        <button onclick="audioPlay()">Play</button>
+        <button onclick="audioPause()">Pause</button>
+        <button onclick="audioStop()">Stop</button>
+    </div>
+    <div id="trackList">
+        <ul>
+            <li onclick="selectTrack('/sound/track1.mp3', '/images/track1.jpg')">Track 1</li>
+            <!-- <li onclick="selectTrack('/sound/track1.mp3', '/images/track2.jpg')">Track 2</li>
+            <li onclick="selectTrack('/sound/track1.mp3', '/images/track3.jpeg')">Track 3</li>
+            <li onclick="selectTrack('/sound/track1.mp3', '/images/track4.jpg')">Track 4</li> -->
+        </ul>
+    </div>
+
+    <!-- <script src="js/media.js"></script> -->
+<script>
+
+
+var audioTag = document.getElementById("audio");
+var timeRange = document.getElementById("timeRange");
+var volumeRange = document.getElementById("volumeRange");
+var currentTrackImage = document.getElementById("currentTrackImage"); //image
+
+audioTag.addEventListener("timeupdate", function() {
+    timeRange.value = audioTag.currentTime;
+});
+
+audioTag.addEventListener("load", function() {
+    timeRange.max = audioTag.duration;
+});
+
+function changeAudioTime() {
+    audioTag.currentTime = timeRange.value; // time range --> for input range   
+    // value of time range input ===  current time of audio tag
+ }
+
+function changeAudioVolume() {
+    audioTag.volume = volumeRange.value;   // volume range --> for input range
+}
+
+function audioPlay() {
+    audioTag.play();
+}
+
+function audioPause() {
+    audioTag.pause();
+}
+
+function audioStop() {
+    audioTag.pause();
+    audioTag.currentTime = 0;
+    timeRange.value = 0;
+}
+
+function selectTrack(trackSrc, trackImage) { // sound src    ,      image src
+    audioTag.src = trackSrc;
+    currentTrackImage.src = trackImage;
+    audioTag.play();
+}
+
+</script>
+
+
+
+</body>
+</html>

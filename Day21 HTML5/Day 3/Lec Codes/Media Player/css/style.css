@@ -1,0 +1,9 @@
+#currentTrackImage{
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+}
+
+ul li{
+    cursor: pointer;
+}

@@ -1,0 +1,6 @@
+https://www.youtube.com/watch?v=F_45gS6FODo
+
+____________________________________________
+js runtime Enviroment article 
+
+https://www.linkedin.com/pulse/javascript-under-hood-part-1-overview-runtime-kabir/

@@ -1,0 +1,112 @@
+.item , .item2{
+  padding: 12px;
+  border: 1px solid black;
+  background-color: lightskyblue;
+}
+
+.way-one-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.way-one-container .header {
+  /* not include end */
+  grid-column: 1/5;
+  background-color: lightgray;
+}
+
+.way-one-container .sidebar {
+  grid-column: 1/2;
+  background-color: lightcoral;
+}
+
+.way-one-container .content {
+  grid-column: 2/5;
+  background-color: lightgreen;
+}
+
+.way-one-container .footer {
+  grid-column: 1/5;
+  background-color: lightslategray;
+}
+
+@media screen and (max-width: 600px) {
+  .way-one-container {
+    grid-template-columns: 1fr;
+  }
+
+  .way-one-container .header,
+  .way-one-container .sidebar,
+  .way-one-container .content,
+  .way-one-container .footer {
+    grid-column: 1/2;
+  }
+
+  .way-one-container .sidebar ul {
+    display: flex;
+    gap: 24px;
+  }
+}
+
+/* zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
+
+.way-two-container {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "header header header header header"
+    "sidebar content content content sidebar2"
+    "footer footer footer footer footer";
+}
+
+.way-two-container .header {
+  grid-area: header;
+  background-color: lightcoral;
+}
+
+.way-two-container .sidebar {
+  grid-area: sidebar;
+  background-color: lightgray;
+}
+.way-two-container .sidebar2 {
+  grid-area: sidebar2;
+  background-color: lightgray;
+}
+
+.way-two-container .content {
+  grid-area: content;
+  background-color: lightsalmon;
+}
+
+.way-two-container .footer {
+  grid-area: footer;
+  background-color: lightpink;
+}
+
+@media screen and (max-width: 600px) {
+  .way-two-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "content"
+      "sidebar2"
+      "footer";
+  }
+}
+
+/* zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
+
+.way-three-container {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  justify-content: center;
+  gap: 12px;
+}
+
+
+.item2{
+  height: 300px;
+}

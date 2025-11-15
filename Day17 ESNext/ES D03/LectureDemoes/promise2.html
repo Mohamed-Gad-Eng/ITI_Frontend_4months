@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          let prom= new Promise((resolve, reject)=>{
+
+            setTimeout(()=>{
+                 user=prompt("Enter Your Name ")
+                 if(user.length>2){
+                    resolve(user)
+                 }
+                 else{
+                    reject("Invalid Name")
+                 }
+
+            },2000)
+
+        })// promise 
+        prom.then((usr)=>{console.log(usr)},(msg)=>{console.log(msg)})
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       async  function getUser(){
+     let res= await  fetch("https://jsonplaceholder.typicode.com/users");
+     console.log(res.name)
+     let allUsers= await res.json()// json.pasre
+     allUsers.forEach((elm)=>{
+       //console.log(elm.name)
+       document.write(`<li style=color:red;background-color:cyan>${elm.name}</li>`)
+
+     })
+
+
+         }
+         getUser()
+    </script>
+</body>
+</html>

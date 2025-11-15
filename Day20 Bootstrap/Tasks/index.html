@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body style="margin: 0px;">
+    <!-- Single responsive navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#000;">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Restaurant</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- <img src="assets/header.jpeg" class="img-fluid" alt="header image"> -->
+
+
+    <div class="menu text-center" style="background-image: url(assets/header.jpeg); width: 100%; height: 50vh; aspect-ratio: 16 / 9;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;">
+        <p class="text-center pt-5 fs-1 fw-light text-light" style="margin: 0px;">Welcome to Our Restaurant</p>
+        <p class="text-center fs-5 fw-light text-light" style="margin: 0px;">Delicious food served with love</p>
+        <button type="button" class="btn btn-primary mt-4">View Menu</button>
+    </div>
+
+    <p class="text-center p-4 fs-3 fw-semibold" style="margin: 0px;">Our Menu</p>
+
+    <div class="mb-5 d-flex flex-row justify-content-center gap-3 flex-wrap">
+
+        <div class="card" style="width: 18rem;">
+            <img src="assets/spiderman.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="fw-semibold" style="margin: 0px;">Grilled Salmon</p>
+                <p class="fw-normal" style="margin: 0px;">Classic New York-style cheesecake.</p>
+                <p class="fw-bold" style="margin: 0px;">$7.99</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="assets/spiderman.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="fw-semibold" style="margin: 0px;">Pasta Carbonara</p>
+                <p class="fw-normal" style="margin: 0px;">Classic New York-style cheesecake.</p>
+                <p class="fw-bold" style="margin: 0px;">$7.99</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="assets/spiderman.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="fw-semibold" style="margin: 0px;">Cheesecake</p>
+                <p class="fw-normal" style="margin: 0px;">Classic New York-style cheesecake.</p>
+                <p class="fw-bold" style="margin: 0px;">$7.99</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="lowersection pt-5 pb-5 bg-secondary" style="--bs-bg-opacity: .1;">
+        <div class="mySection d-flex flex-row justify-content-center gap-3 flex-wrap">
+            <div class="sidesection1">
+                <img src="assets/header.jpeg" class="img-fluid rounded-3" alt="header image" style="width: 550px;">
+            </div>
+            <div class="sidesection2" style="width: 550px">
+                <p class="text-center mt-3 p-4 fs-3 fw-semibold" style="margin: 0px;">About Us</p>
+                <p class="fw-normal" style="margin: 0px;">We are a family-owned restaurant dedicated to
+                    serving delicious, high-quality meals made from fresh, locally sourced ingredients. Our mission is
+                    to provide an unforgettable dining experience for every guest.</p>
+            </div>
+        </div>
+
+        <p class="text-center p-4 fs-3 fw-semibold" style="margin: 0px;">Our Menu</p>
+
+        <form class="m-auto p-4" style="max-width: 1100px;">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+                <label for="floatingTextarea2" class="form-label">Message</label>
+                <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <div class="lowersection p-4 text-center bg-dark ">
+        <p class="bg-dark text-white">@ 2025 Restaurant. All rights reserved.</p>
+        <span class="text-center p-2 bg-dark text-white">Facebook</span>
+        <span class="text-center p-2 bg-dark text-white">Twitter</span>
+        <span class="text-center p-2 bg-dark text-white">Instagram</span>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

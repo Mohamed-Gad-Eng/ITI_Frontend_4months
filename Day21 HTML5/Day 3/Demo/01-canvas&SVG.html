@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Canvas & SVG</title>
+    </head>
+    <body>
+
+        <!-- Canvas
+            used for drawing graphics via js
+            has width and height as attributes
+            we can draw shapes, paths, text, images
+            (raster) ->graphics are  pixel-based
+        -->
+
+        <canvas width="500px" height="300px"
+            style="background-color: aqua;"></canvas>
+
+
+            
+        <!-- SVG
+                scalable vector graphic
+                uses XML to define vector-based graphics
+                graphics are resolution-independent
+                can be scaled without quality loss
+            -->
+        <svg style="background-color: aqua; width:500px; height:300px">
+
+            <polygon points="20,50,150,300,450,200,30,90"></polygon>
+
+            <rect x="50" y="50" width="100px" height="100px"
+                style="fill: blue"></rect>
+            <rect x="200" y="150" width="100px" height="100px"
+                style="fill: red"></rect>
+
+        </svg>
+
+        <script src="01-canvas&SVG.js"></script>
+    </body>
+</html>
