@@ -1,0 +1,17 @@
+@import "../abstract/variables";
+@import "../abstract/extend";
+
+
+button {
+    @extend %button-base;
+    width: calc(100% - 16px);;
+    background: $primary-color;
+    border: none;
+    color: white;
+    font-size: 14px;
+    transition: background 0.3s;
+
+    &:hover {
+        background: darken($primary-color, 10%);
+    }
+}

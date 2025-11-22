@@ -1,0 +1,148 @@
+@charset "UTF-8";
+.element-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.card {
+  background-color: red;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.card-two {
+  background-color: blue;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.header {
+  background: yellow;
+  color: blue;
+}
+
+.color-1 {
+  background: red;
+}
+
+.color-2 {
+  background: blue;
+}
+
+.color-3 {
+  background: pink;
+}
+
+.color-4 {
+  background: yellow;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mt-3 {
+  margin-top: 3rem;
+}
+
+.mt-4 {
+  margin-top: 4rem;
+}
+
+.mt-5 {
+  margin-top: 5rem;
+}
+
+.after::after {
+  content: "⭐⭐⭐⭐⭐";
+  color: blue;
+  font-size: 22px;
+}
+
+.before::before {
+  content: "⭐⭐⭐⭐⭐";
+  color: blue;
+  font-size: 22px;
+}
+
+.first-character::first-letter {
+  color: blue;
+  font-size: 32px;
+}
+
+.transition {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+}
+.transition:hover {
+  background-color: blue;
+  cursor: pointer;
+  transition: 2s linear;
+}
+
+.submit-button, .secondary-button, .primary-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 4px 8px;
+}
+
+nav {
+  background-color: black;
+  padding: 12px;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  color: red;
+}
+nav ul li a::after {
+  content: " after text";
+  color: yellow;
+}
+
+.submit-button, .secondary-button, .primary-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 4px 8px;
+}
+
+.button {
+  background-color: #3498db;
+  color: #2ecc71;
+  font-family: "Arial", "sans-serif";
+  padding: 8px;
+}
+
+.primary-button {
+  background-color: red;
+  color: black;
+}
+
+.secondary-button {
+  background-color: lightskyblue;
+  color: white;
+}
+
+.submit-button {
+  background-color: burlywood;
+  color: black;
+}/*# sourceMappingURL=main.css.map */

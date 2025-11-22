@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tailwind CSS Custom Colors</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <script>
+            tailwind.config ={
+                theme: {
+                    extend:{
+                        colors:{
+                            hamada:{
+                                50:'#EFF6FF',
+                                100:'#DBEAFE',
+                                500:'#3BB2F6',
+                                600:'#2563EB',
+                                700:'#1D4ED8',
+                                900:'#1E3A8A'
+                            }
+                        },
+                    }
+                }
+            }
+        </script>
+
+    </head>
+    <body>
+
+        <div class="h-16 bg-hamada-50"></div>
+        <div class="h-16 bg-hamada-100"></div>
+        <div class="h-16 bg-hamada-500"></div>
+        <div class="h-16 bg-hamada-600"></div>
+        <div class="h-16 bg-hamada-700"></div>
+        <div class="h-16 bg-hamada-900"></div>
+
+    </body>
+</html>

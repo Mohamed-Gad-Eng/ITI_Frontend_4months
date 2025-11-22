@@ -1,0 +1,114 @@
+@mixin box-shadow-mixin($x, $y, $blur, $color) {
+    box-shadow: $x $y $blur $color;
+}
+
+@mixin radius-mixin ($r) {
+    border-radius: $r;
+}
+
+.element-shadow {
+    @include box-shadow-mixin(0, 2px, 4px, rgba(0, 0, 0, 0.1));
+    @include radius-mixin(4px);
+}
+
+
+
+@mixin card-mixin ($bg, $radius, $padding) {
+    background-color: $bg;
+    border-radius: $radius;
+    padding: $padding;
+}
+
+.card {
+    @include card-mixin(red, 8px, 12px)
+}
+
+.card-two {
+    @include card-mixin(blue, 12px, 24px)
+}
+
+
+
+
+@mixin text-color($bg-color) {
+    @if(lightness($bg-color) > 50) {
+        color: red;
+    }
+
+    @else {
+        color: blue;
+    }
+}
+
+
+.header {
+    background: yellow;
+    @include text-color(yellow)
+}
+
+
+
+
+$colors : red,
+blue,
+pink,
+yellow;
+
+
+@for $i from 1 through length($colors) {
+    .color-#{$i} {
+        background: nth($colors, $i)
+    }
+}
+
+// while loop
+$i : 1;
+
+@while $i <=5{
+    .mt-#{$i}{
+        margin-top: #{$i}rem;
+    }
+
+    $i: $i +1;
+}
+
+
+
+
+
+
+
+
+
+
+.after::after{
+    content: '⭐⭐⭐⭐⭐';
+    color: blue;
+    font-size: 22px;
+}
+
+
+.before::before{
+    content: '⭐⭐⭐⭐⭐';
+    color: blue;
+    font-size: 22px;
+}
+
+.first-character::first-letter{
+    color: blue;
+    font-size: 32px;
+}
+
+
+.transition{
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+
+    &:hover{
+        background-color: blue;
+        cursor: pointer;
+        transition: 2s linear;
+    }
+}

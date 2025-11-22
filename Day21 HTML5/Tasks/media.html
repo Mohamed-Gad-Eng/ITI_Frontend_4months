@@ -183,7 +183,7 @@
         let myArray = ["Sia LSD - Genius ft. Sia, Diplo, Labrinth", "LSD - Thunderclouds (Official Video) ft. Sia, Diplo, Labrinth", "Elastic Heart ft. Sia", "Super Mario"]
         var mySongs = document.querySelector(".mySongs");
         var audioSrc = document.querySelector("source");
-var myPic = document.querySelector("img");
+        var myPic = document.querySelector("img");
 
         myArray.forEach((ele, i) => {
             const newDiv = document.createElement("div");
@@ -196,7 +196,7 @@ var myPic = document.querySelector("img");
             newDiv.addEventListener("click", () => {
                 audioSrc.src = `assets/song${i + 1}.mp3`;
                 myPic.src = `assets/pic${i + 1}.jpeg`;
-                audioTag.load(); 
+                audioTag.load();
                 playAudio();
             })
 

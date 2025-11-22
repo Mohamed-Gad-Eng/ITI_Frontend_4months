@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet"
+            type="text/css" />
+        <script
+            src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+
+    <body>
+
+        <!-- <div class="flex flex-row sm:flex-col md:flex-row lg:flex-row">
+            <div class="h-32 w-32 bg-red-300"> </div>
+            <div class="h-32 w-32 bg-red-400"> </div>
+            <div class="h-32 w-32 bg-red-500"> </div>
+            <div class="h-32 w-32 bg-red-600"> </div>
+        </div> -->
+        <!-- 
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div class="h-32  bg-red-300"> </div>
+            <div class="h-32  bg-red-400"> </div>
+            <div class="h-32  bg-red-500"> </div>
+            <div class="h-32  bg-red-600"> </div>
+        </div> -->
+
+        <!-- <div class="grid grid-cols-4">
+            <div class="p-12 bg-blue-300 col-span-4">header</div>
+            <div class="p-12 bg-blue-400 col-span-4 sm:col-span-1">sidebar</div>
+            <div class="p-12 bg-blue-500 col-span-4 sm:col-span-3">
+                <div class="grid grid-cols-2">
+                    <div
+                        class="p-8 bg-orange-300 col-span-2 sm:col-span-1"></div>
+                    <div
+                        class="p-8 bg-orange-400 col-span-2 sm:col-span-1"></div>
+                    <div class="p-8 bg-orange-500 col-span-2">
+                        <div
+                            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                            <div class="h-32  bg-red-300"> </div>
+                            <div class="h-32  bg-red-400"> </div>
+                            <div class="h-32  bg-red-500"> </div>
+                            <div class="h-32  bg-red-600"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-12 bg-blue-600 col-span-4">footer</div>
+        </div> -->
+
+        <div class="grid grid-cols-4">
+            <div class="col-span-4">
+                <div
+                    class="bg-gray-200 flex justify-between items-center py-4 px-8">
+                    <div class="w-24 hidden sm:block">
+                        <img class="w-full rounded-xl"
+                            src="/assets/superman.jpg"
+                            alt="nav-bar-logo">
+                    </div>
+
+                    <div
+                        class="flex gap-12 items-center justify-between sm:justify-end w-full">
+                        <div class="hidden sm:block">
+                            <ul class="flex gap-4 text-xl font-bold">
+                                <li>link</li>
+                                <li>link</li>
+                                <li>link</li>
+                            </ul>
+                        </div>
+
+                        <div class="sm:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+                            </svg>
+                        </div>
+
+                        <div>
+                            <input type="text" placeholder="search"
+                                class="outline outline-2 outline-black focus:outline-green-600 py-1 px-2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-12 bg-gray-300 col-span-4 sm:col-span-1">
+                <ul class="flex flex-row justify-between sm:flex-col gap-2">
+                    <li
+                        class="text-xl w-32 text-center bg-blue-500 py-2 px-4 rounded-lg hover:bg-blue-600 cursor-pointer">Link</li>
+                    <li
+                        class="text-xl w-32 text-center bg-blue-500 py-2 px-4 rounded-lg hover:bg-blue-600 cursor-pointer">Link</li>
+                    <li
+                        class="text-xl w-32 text-center bg-blue-500 py-2 px-4 rounded-lg hover:bg-blue-600 cursor-pointer">Link</li>
+                </ul>
+            </div>
+            <div class="p-12 bg-gray-100 col-span-4 sm:col-span-3">
+
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                    <div class="flex justify-center">
+                        <div class="border border-2 shadow-2"
+                            style="width: 16rem;">
+                            <div class="w-full">
+                                <img class="w-full" src="/assets/spiderman.jpg"
+                                    alt="card-image">
+                            </div>
+
+                            <div class=" py-4 px-6">
+                                <p class="font-bold text-xl">card title</p>
+                                <p>card description card description card
+                                    description</p>
+                            </div>
+
+                            <div class="flex justify-end py-4 px-6">
+                                <button
+                                    class="bg-blue-400 py-2 px-4 rounded-xl">click
+                                    me</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <div class="border border-2 shadow-2"
+                            style="width: 16rem;">
+                            <div class="w-full">
+                                <img class="w-full" src="/assets/spiderman.jpg"
+                                    alt="card-image">
+                            </div>
+
+                            <div class=" py-4 px-6">
+                                <p class="font-bold text-xl">card title</p>
+                                <p>card description card description card
+                                    description</p>
+                            </div>
+
+                            <div class="flex justify-end py-4 px-6">
+                                <button
+                                    class="bg-blue-400 py-2 px-4 rounded-xl">click
+                                    me</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <div class="border border-2 shadow-2"
+                            style="width: 16rem;">
+                            <div class="w-full">
+                                <img class="w-full" src="/assets/spiderman.jpg"
+                                    alt="card-image">
+                            </div>
+
+                            <div class=" py-4 px-6">
+                                <p class="font-bold text-xl">card title</p>
+                                <p>card description card description card
+                                    description</p>
+                            </div>
+
+                            <div class="flex justify-end py-4 px-6">
+                                <button
+                                    class="bg-blue-400 py-2 px-4 rounded-xl">click
+                                    me</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <div class="border border-2 shadow-2"
+                            style="width: 16rem;">
+                            <div class="w-full">
+                                <img class="w-full" src="/assets/spiderman.jpg"
+                                    alt="card-image">
+                            </div>
+
+                            <div class=" py-4 px-6">
+                                <p class="font-bold text-xl">card title</p>
+                                <p>card description card description card
+                                    description</p>
+                            </div>
+
+                            <div class="flex justify-end py-4 px-6">
+                                <button
+                                    class="bg-blue-400 py-2 px-4 rounded-xl">click
+                                    me</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-12 bg-gray-500 col-span-4">footer</div>
+        </div>
+
+        <script>
+
+                isLoading = false;
+
+
+        </script>
+    </body>
+</html>

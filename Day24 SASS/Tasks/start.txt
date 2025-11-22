@@ -1,0 +1,5 @@
+! SCSS syntax, which looks very similar to normal CSS 
+but allows variables, nesting, mixins, inheritance, operators, etc.
+
+! It must be compiled into .css because the browser only understands CSS.
+

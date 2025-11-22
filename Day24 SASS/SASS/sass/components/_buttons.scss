@@ -1,0 +1,30 @@
+@import "../abstract/variable";
+@import "../abstract/extend";
+
+
+.button {
+    background-color: $primary-color;
+    color: $secondary-color;
+    font-family: $font-stack;
+    padding: $spacing-unit;
+}
+
+
+
+.primary-button {
+    @extend %button-base;
+    background-color: red;
+    color: black;
+}
+
+.secondary-button {
+    @extend %button-base;
+    background-color: lightskyblue;
+    color: white;
+}
+
+.submit-button{
+    @extend %button-base;
+    background-color: burlywood;
+    color: black;
+}

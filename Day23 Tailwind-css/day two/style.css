@@ -1,0 +1,28 @@
+body{
+    background-color: green;
+}
+
+/* sm --> start from 640 px to infinite or (any break point --> md) */
+@media screen and (min-width: 640px) {
+  body {
+    background-color: red;
+  }
+}
+
+/* md --> start from 768 to infinite or (br --> lg) */
+@media screen and (min-width: 768px) {
+  body {
+    background-color: blue;
+  }
+}
+/* lg --> start from 1024 to infinite or (br) */
+@media screen and (min-width: 1024px) {
+  body {
+    background-color: yellow;
+  }
+}
+
+
+/* RWD
+Think Mobile First
+*/
