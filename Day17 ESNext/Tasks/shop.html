@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITI E-Commerce app</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="layout">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-img"><img src="images/20251005_144627.jpg" alt="Logo"></div>
+                <p>E-Commerce</p>
+            </div>
+            <input type="checkbox" id="menu_checkbox" class="mobile-only">
+            <label for="menu_checkbox" class="burger-label mobile-only">
+                <div></div>
+                <div></div>
+                <div></div>
+            </label>
+            <!-- <div class="burger mobile-only" id="burger">☰</div> -->
+            <div class="nav">
+                <ul>
+                    <li class="mobile-only"><a href="cart.html">Cart <i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="cart desktop-only">
+                <a href="login.html">Login</a>
+                <a href="cart.html">Cart <i class="fa-solid fa-cart-shopping fa-bounce"></i></a>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div>
+                <h3>Filter By</h3>
+
+                <!-- Search -->
+                <div class="filter-group">
+                    <label for="search">Search</label>
+                    <input type="text" id="search" placeholder="Search products...">
+                </div>
+
+                <!-- Category Enum -->
+                <div class="filter-group">
+                    <label for="category">Category</label>
+                    <div class="custom-select">
+                        <select id="category">
+                            <option value="">All Categories</option>
+                            <option value="0">Men's Clothing</option>
+                            <option value="1">Jewelry</option>
+                            <option value="2">Electronics</option>
+                            <option value="3">Women's Clothing</option>
+                        </select>
+                        <div class="selected-option">Default</div>
+                        <ul class="options-list">
+                            <li data-value="">All Categories</li>
+                            <li data-value="0">Men's Clothing</li>
+                            <li data-value="1">Jewelry</li>
+                            <li data-value="2">Electronics</li>
+                            <li data-value="3">Women's Clothing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sort -->
+                <div class="filter-group">
+                    <label for="sort">Sort By</label>
+                    <div class="custom-select">
+                        <select id="sort">
+                            <option value="">Not Sorted</option>
+                            <option value="rating">Rating</option>
+                            <option value="price">Price ↑</option>
+                            <option value="pricedesc">Price ↓</option>
+                        </select>
+                        <div class="selected-option">Default</div>
+                        <ul class="options-list">
+                            <li data-value="">Not Sorted</li>
+                            <li data-value="rating"><i class="fa-solid fa-star"></i> Rating</li>
+                            <li data-value="price"><i class="fa-solid fa-arrow-up"></i> Price ↑</li>
+                            <li data-value="pricedesc"><i class="fa-solid fa-arrow-down"></i> Price ↓</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div id="products">
+                <div class="card">
+                    <div class="favorite-icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <div class="myImg">
+                        <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png" alt="handbag" id="myimg">
+                    </div>
+                    <h4>${product.title}</h4>
+                    <p>100</p>
+                    <button class="add">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <ul>
+                <li>item</li>
+                <li>item</li>
+                <li>item</li>
+                <li>item</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/8e1488fa5e.js" crossorigin="anonymous"></script>
+    <script src="main.js" type="module"></script>
+</body>
+
+</html>

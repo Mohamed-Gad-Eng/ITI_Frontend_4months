@@ -1,4 +1,4 @@
-import {items, removeProduct} from "./main.js"
+import { items, removeProduct } from "./main.js"
 
 window.addEventListener("load", () => {
     render();
@@ -8,7 +8,7 @@ function render() {
     const div = document.querySelector("#cart");
     if (!div) return;
 
-    div.innerHTML = "<h3>Your Shopping Cart 🛒</h3>";
+    div.innerHTML = `<h3>Your Shopping Cart <i class="fa-solid fa-cart-shopping"></i></h3>`;
     if (items.length === 0) {
         div.innerHTML += "<p>Cart is empty</p>";
         return;
@@ -39,8 +39,10 @@ function render() {
 
     div.innerHTML += `
         <div id="cart-summary">
-            <h3>Total: $<span id="cart-total">${getTotalPrice().toFixed(2)}</span></h3>
-            <button id="checkout-btn">Checkout</button>
+            <div class="summary-box">
+                <h3>Total: $<span id="cart-total">${getTotalPrice().toFixed(2)}</span></h3>
+                <button id="checkout-btn">Checkout</button>
+            </div>
         </div>
         `;
 
@@ -87,3 +89,11 @@ function getTotalPrice() {
         return sum + i.getTotal();
     }, 0);
 }
+
+window.onload = function() {
+    document.querySelectorAll('.header a').forEach(link => {
+        if (link.href === window.location.href) {
+            link.classList.add('active');
+        }
+    });
+};

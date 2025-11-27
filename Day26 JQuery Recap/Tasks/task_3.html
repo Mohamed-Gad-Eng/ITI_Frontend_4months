@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.js"></script>
+    <style>
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .myImg {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            left: calc(50% - 100px);
+            top: calc(50% - 140px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="myImg">
+        <img src="assets/1.jpg" alt="flower basket">
+    </div>
+
+    <script>
+
+
+        $(".myImg").click(function () {
+            $(this).animate({ deg: 2520 }, {
+                duration: 5000,
+                step: function (now) {
+                    $(this).css({
+                        transform: "rotate(" + now + "deg)",
+                        width: $(this).width() * 0.99,
+                        height: $(this).height() * 0.99
+                    })
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

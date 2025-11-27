@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8" />
+
+	<title>EasyZoom</title>
+
+	<link rel="stylesheet" href="css/example.css" />
+	<link rel="stylesheet" href="css/easyzoom.css" />
+
+</head>
+<body>
+
+	<div class="container">
+		<section id="example">
+			<h1>
+				EasyZoom
+			</h1>
+			<p>
+				Use your mouse cursor or finger to zoom and pan the images below.
+			</p>
+
+			<div class="easyzoom easyzoom--overlay">
+				<a href="example-images/1_zoom.jpg">
+					<img src="example-images/1_standard.jpg" alt="" width="640" height="360" />
+				</a>
+			</div>
+
+			<h2>
+				Adjacent
+			</h2>
+
+			<div style="float: right; width: 310px; height: 400px; background: #EEE;"></div>
+
+			<div class="easyzoom easyzoom--adjacent">
+				<a href="example-images/2_zoom.jpg">
+					<img src="example-images/2_standard.jpg" alt="" width="310" height="400" />
+				</a>
+			</div>
+
+		</section>
+
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<!-- <script src="blugin/dist/easyzoom.js"></script> -->
+     <script src="zoom.js"></script>
+	<script>
+		var $easyzoom = $('.easyzoom').easyZoom();
+
+		// Get the instance API
+		var api = $easyzoom.data('easyZoom');
+	</script>
+
+</body>
+</html>

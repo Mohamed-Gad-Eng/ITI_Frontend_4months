@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script/jq-D.js"></script>
+    <script src="script/jq-easing.js"></script>
+    <style>
+        img{
+            position: absolute;
+            width: 150px;
+            height: auto;
+            left: 100px;
+
+        }
+        #img1{
+            top: 10px;
+        }
+
+        #img2{
+            top: 210px;
+        }
+        #img3{
+            top: 420px;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/dd.png" id="img1">
+    <img src="images/dd.png" id="img2">
+    <img src="images/dd.png" id="img3">
+    <script>
+        $(document).ready(function(){
+
+            $('#img1').animate({left:"+=600px"},5000,'linear')
+            $('#img2').animate({left:"+=600px"},5000,'swing')
+            $('#img3').animate({left:"+=600px"},5000,'easeOutElastic')
+        })
+    </script>
+</body>
+</html>

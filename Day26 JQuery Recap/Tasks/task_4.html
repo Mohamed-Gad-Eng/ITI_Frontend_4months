@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .cont {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bin {
+            width: 600px;
+            height: 600px;
+            /* display: inline; */
+        }
+
+        .myImg {
+            width: 100px;
+            height: 100px;
+            cursor: move;
+        }
+
+        .contain {
+            display: inline-block;
+            width: 150px;
+            height: 160px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Droppables</h2>
+    <hr>
+    <div class="cont">
+        <div class="bin">
+            <img src="assets/3.jpg" alt="black circle">
+        </div>
+
+        <div class="contain">
+            <div class="myImg" id="draggable">
+                <img src="assets/2.jpg" alt="to be draged">
+            </div>
+            <h3>Drag Me</h3>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            /**
+             * Bind two handlers to the matched elements, to be executed when the mouse pointer enters and leaves the elements.
+             *
+             * @param handlerIn A function to execute when the mouse pointer enters the element.
+             * @param handlerOut A function to execute when the mouse pointer leaves the element.
+             */
+            //hover(handlerIn: (eventObject: JQueryEventObject) => any, handlerOut: (eventObject: JQueryEventObject) => any): JQuery;
+
+            var HoleDimensions = $(".bin").offset();
+            let centerPoint_X = HoleDimensions.left + $(".bin").height() / 2;   // height = width
+            let centerPoint_Y = HoleDimensions.top + $(".bin").width() / 2;
+
+            function isInside(x, y) {
+                const distanceSquared = (x - centerPoint_X) * (x - centerPoint_X) + (y - centerPoint_Y) * (y - centerPoint_Y);
+                const radiusSquared = 300 * 300;               // radius = 300px
+                return distanceSquared <= radiusSquared;
+            }
+
+            $(function () {
+
+                $("#draggable").hover(
+                    function () {
+                        $(this).effect("shake", { distance: 5, times: 50 }, 5000);
+                    }, function () {
+                        $(this).stop(true, true);
+                    }
+                )
+
+                $("#draggable").draggable({
+                    start: function () {
+                        $(this).stop(true, true);
+                    },
+                    stop: function () {
+                        var myoff = $(this).offset();
+                        // need to get the dimentions
+                        
+                        //  (A_X,A_Y)  +----+  (B_X,B_Y)
+                        //             |    |                the four points of the picture
+                        //  (C_X,C_Y)  +----+  (D_X,D_Y)
+
+                        let A_X = myoff.left;
+                        let A_Y = myoff.top;
+                        let B_X = myoff.left + $(this).width();
+                        let B_Y = myoff.top;
+                        let C_X = myoff.left;
+                        let C_Y = myoff.top + $(this).height();
+                        let D_X = myoff.left + $(this).width();
+                        let D_Y = myoff.top + $(this).height();
+                        
+                        if (isInside(A_X, A_Y) && isInside(B_X, B_Y) && isInside(C_X, C_Y) && isInside(D_X, D_Y)) {
+                            $(this).off("mouseenter mouseleave");
+                            $(this).toggle({ effect: "scale", duration: 2000 });
+                        }
+                    }
+                });
+
+
+            });
+
+
+        })
+    </script>
+</body>
+
+</html>

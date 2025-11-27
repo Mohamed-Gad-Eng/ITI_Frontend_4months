@@ -1,4 +1,5 @@
 @import "../abstract/variables";
+@import "../abstract/mixins";
 
 .products-container {
     display: grid;
@@ -6,17 +7,14 @@
     gap: 20px;
     padding: 10px;
 
-    @media (max-width: 992px) {
-        & {
-            grid-template-columns: 1fr 1fr; // 2 columns on tablets
-        }
+    @include responsive(992px) {
+        grid-template-columns: 1fr 1fr; // 2 columns on tablets
     }
 
-    @media (max-width: 600px) {
-        & {
-            grid-template-columns: 1fr; // 1 column on mobile
-        }
+    @include responsive(600px) {
+        grid-template-columns: 1fr; // 1 column on mobile
     }
+
 }
 
 .product-card {

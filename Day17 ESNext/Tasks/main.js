@@ -25,21 +25,22 @@ class CartItem {
     }
 }
 
+// ---------------- GLOBALS ----------------
 const productsContainer = document.querySelector("#products");
 
-if (productsContainer) {
-    let xhr = new XMLHttpRequest()
-    xhr.open('GET', "https://fakestoreapi.com/products")
-    xhr.send()
+// if (productsContainer) {
+//     let xhr = new XMLHttpRequest()
+//     xhr.open('GET', "https://fakestoreapi.com/products")
+//     xhr.send()
 
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            let data = JSON.parse(xhr.response)
-            products = data.map(p => new Product(p.id, p.title, p.price, p.category, p.image));
-            showAll(products);
-        }
-    }
-}
+//     xhr.onreadystatechange = function () {
+//         if (xhr.readyState == 4 && xhr.status == 200) {
+//             let data = JSON.parse(xhr.response)
+//             products = data.map(p => new Product(p.id, p.title, p.price, p.category, p.image));
+//             showAll(products);
+//         }
+//     }
+// }
 
 // Hold all the products
 let products = [];
@@ -68,121 +69,218 @@ export function removeProduct(productId) {
     localStorage.setItem("cart", JSON.stringify(items));
 }
 
-// export function render() {
-//     const div = document.querySelector("#cart");
-//     if (!div) return;
 
-//     div.innerHTML = "<h3>Your Shopping Cart 🛒</h3>";
-//     if (items.length === 0) {
-//         div.innerHTML += "<p>Cart is empty</p>";
-//         return;
-//     }
-
-//     items.forEach(i => {
-//         div.innerHTML += `
-//             <div class="cart-item">
-//                 <img src="${i.product.image}" alt="${i.product.title}">
-
-//                 <div class="info">
-//                     <h4>${i.product.title}</h4>
-//                     <p>$${i.product.price.toFixed(2)}</p>
-//                 </div>
-
-//                 <div class="quantity-controls">
-//                     <button class="qty-btn decrease" data-id="${i.product.id}">−</button>
-//                     <span class="qty">${i.quantity}</span>
-//                     <button class="qty-btn increase" data-id="${i.product.id}">+</button>
-//                 </div>
-
-//                 <strong class="item-total">$${i.getTotal().toFixed(2)}</strong>
-
-//                 <button class="remove" data-id="${i.product.id}">🗑️</button>
-//             </div>
-//             `;
-//     });
-
-//     div.innerHTML += `
-//         <div id="cart-summary">
-//             <h3>Total: $<span id="cart-total">${getTotalPrice().toFixed(2)}</span></h3>
-//             <button id="checkout-btn">Checkout</button>
-//         </div>
-//         `;
-
-//     div.querySelectorAll(".increase").forEach(btn => {
-//         btn.addEventListener("click", e => {
-//             const id = parseInt(e.target.dataset.id);
-//             const item = items.find(i => i.product.id === id);
-//             if (item)
-//                 item.increase();
-//             localStorage.setItem("cart", JSON.stringify(items));
-//             render();
-//         });
-//     });
-
-//     div.querySelectorAll(".decrease").forEach(btn => {
-//         btn.addEventListener("click", e => {
-//             const id = parseInt(e.target.dataset.id);
-//             const item = items.find(i => i.product.id === id);
-//             if (item)
-//                 item.decrease();
-//             localStorage.setItem("cart", JSON.stringify(items));
-//             render();
-//         });
-//     });
-
-//     div.querySelectorAll(".remove").forEach(btn => {
-//         btn.addEventListener("click", e => {
-//             const id = parseInt(e.target.dataset.id);
-//             removeProduct(id);
-//         });
-//     });
-
-//     div.querySelector("#checkout-btn").addEventListener("click", () => {
-//         items = [];
-//         localStorage.setItem("cart", JSON.stringify(items));
-//         alert("Thanks for Purchase");
-//         render();
-//     })
-// }
-
-// export function getTotalPrice() {
-//     return items.reduce((sum, i) => {
-//         return sum + i.getTotal();
-//     }, 0);
-// }
-
-
-function showAll(products) {
+// ---------------- Render Products ----------------
+function showAll(productsArray) {
     const container = document.querySelector("#products");
+    if (!container) return;
+
     container.innerHTML = "";
 
-    products.forEach(product => {
+    productsArray.forEach(product => {
         const card = document.createElement("div");
         card.classList.add("card");
         card.innerHTML = `
+            <div class="favorite-icon">
+                <i class="fa-regular fa-heart"></i>
+            </div>
             <div class="myImg">
-            <img src="${product.image}" alt="${product.title}">
+                <img src="${product.image}" alt="${product.title}">
             </div>  
             <h4>${product.title}</h4>
             <p>$${product.price.toFixed(2)}</p>
             <button class="add" onClick="myClick(${product.id})">Add to Cart</button>
-            `;
+        `;
         container.appendChild(card);
-    })
-
-    // data-id="${product.id}"
-
-    // container.querySelectorAll(".add").forEach(btn => {
-    //     btn.addEventListener("click", (e) => {
-    //         const id = parseInt(e.target.dataset.id);
-    //         let prod = products.find(p => p.id == id);
-    //         addProduct(prod);
-    //     });
-    // })
-
+    });
 }
 
-window.myClick = function myClick(id) {
-    const prod = products.find(p => p.id == id);
-    addProduct(prod);
+// function showAll(products) {
+//     const container = document.querySelector("#products");
+//     if (!container) return;
+
+//     container.innerHTML = "";
+
+//     products.forEach(product => {
+//         const card = document.createElement("div");
+//         card.classList.add("card");
+//         card.innerHTML = `
+//                             <div class="favorite-icon">
+//                         <i class="fa-regular fa-heart"></i>
+//                     </div>
+//             <div class="myImg">
+//             <img src="${product.image}" alt="${product.title}">
+//             </div>  
+//             <h4>${product.title}</h4>
+//             <p>$${product.price.toFixed(2)}</p>
+//             <button class="add" onClick="myClick(${product.id})">Add to Cart</button>
+//             `;
+//         container.appendChild(card);
+//     })
+
+// data-id="${product.id}"
+
+// container.querySelectorAll(".add").forEach(btn => {
+//     btn.addEventListener("click", (e) => {
+//         const id = parseInt(e.target.dataset.id);
+//         let prod = products.find(p => p.id == id);
+//         addProduct(prod);
+//     });
+// })
+
+// }
+
+
+// ------------------------Backend Intergration--------------------
+
+const baseUrl = "http://localhost:5116";
+
+const sortMap = {
+    "": null,              // Not Sorted → send null or skip in URL
+    "rating": "rating",
+    "price": "price",
+    "pricedesc": "pricedesc"
+};
+
+const categoryMap = {
+    "": null, // All → no filter
+    "0": 0,
+    "1": 1,
+    "2": 2,
+    "3": 3
+};
+
+
+
+function getFilteredProducts(pageIndex = 1, pageSize = 8) {
+    if (!productsContainer) return; // only on pages with products
+
+    // Build query params safely
+    const params = new URLSearchParams();
+    params.append("PageIndex", pageIndex);
+    params.append("PageSize", pageSize);
+
+    // Sorting
+    const sortEl = document.getElementById("sort");
+    const rawSortValue = sortEl ? sortEl.value : "";
+    const sort = sortMap[rawSortValue] ?? null;
+
+    // Category
+    const categoryEl = document.getElementById("category");
+    const selectedCategory = categoryEl ? categoryEl.value : "";
+    const category = categoryMap[selectedCategory] ?? null;
+
+    // Search
+    const searchEl = document.getElementById("search");
+    const search = searchEl ? searchEl.value.trim() : "";
+
+    if (category !== null) params.append("Category", category);
+    if (sort !== null) params.append("Sort", sort);
+    if (search) params.append("Search", search);
+
+    const url = `${baseUrl}/Products/getAll?${params.toString()}`;
+
+    console.log("Fetching:", url);
+
+    fetch(url)
+        .then(res => {
+            if (!res.ok) {
+                throw new Error(`HTTP error: ${res.status}`);
+            }
+            return res.json();
+        })
+        .then(result => {
+            // result has: pageIndex, pageSize, count, data[]
+            console.log("Result:", result);
+
+            // Map backend data → Product objects
+            products = result.data.map(
+                p => new Product(p.id, p.title, p.price, p.category, p.image)
+            );
+
+            showAll(products);
+
+            // If you have a pagination function, compute total pages
+            if (typeof setupPagination === "function") {
+                const totalPages = Math.ceil(result.count / result.pageSize);
+                setupPagination(totalPages, pageIndex);
+            }
+        })
+        .catch(err => console.error("Fetch error:", err));
+}
+
+
+
+
+// --------------------------window loading-----------------------------
+window.onload = function () {
+
+    window.myClick = function myClick(id) {
+        const prod = products.find(p => p.id == id);
+        addProduct(prod);
+    }
+
+    if (productsContainer) {
+        // Load ALL products first ⚡
+        getFilteredProducts();
+
+        // Only apply filters *after user interaction*
+        ["sort", "category", "search"].forEach(id => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const eventName = id === "search" ? "input" : "change";
+            el.addEventListener(eventName, () => getFilteredProducts());
+        });
+    }
+
+    document.querySelectorAll('.sidebar .custom-select').forEach((customSelect) => {
+        const selectedOption = customSelect.querySelector('.selected-option');
+        const optionsList = customSelect.querySelector('.options-list');
+        const originalSelect = customSelect.querySelector('select');
+
+
+        selectedOption.addEventListener("click", () => {
+            const isVisible = optionsList.style.display === "block";
+
+            document.querySelectorAll(".options-list").forEach(list => {
+                list.style.display = "none";
+            });
+
+            optionsList.style.display = isVisible ? "none" : "block";
+        });
+
+        optionsList.querySelectorAll("li").forEach((option) => {
+            option.addEventListener("click", () => {
+                selectedOption.textContent = option.textContent;
+                originalSelect.value = option.getAttribute("data-value");
+                optionsList.style.display = "none";
+            });
+        });
+
+        document.addEventListener("click", function (e) {
+            if (!customSelect.contains(e.target)) {
+                optionsList.style.display = "none";
+            }
+        });
+    });
+
+
+    // need to make it in the rendering for product selection
+    document.querySelectorAll('.header a').forEach(link => {
+        const rawHref = link.getAttribute('href');
+        if (!rawHref || rawHref === '#') return; // skip placeholder links
+        const currentPath = window.location.pathname.replace(/\/$/, '');
+        const linkPath = new URL(rawHref, window.location.href).pathname.replace(/\/$/, '');
+        if (linkPath === currentPath) link.classList.add('active');
+    });
+
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('.favorite-icon')) {
+            const heart = e.target.tagName === "I" ? e.target : e.target.querySelector("i");
+            heart.classList.toggle('fa-regular');
+            heart.classList.toggle('fa-solid');
+            heart.style.color = heart.classList.contains('fa-solid') ? '#ff0000' : '#fff';
+        }
+    });
+
 }

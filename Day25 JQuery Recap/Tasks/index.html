@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.js"></script>
+    <style>
+        body {
+            margin: 0;
+            background-color: rgb(195, 203, 203);
+        }
+
+        .buttons {
+            display: block;
+            margin: 5px auto;
+            width: fit-content;
+        }
+
+        button,
+        .service ul li {
+            background-color: deeppink;
+            color: white;
+            padding: 32px 64px;
+            border: none;
+            border-radius: 10px;
+            font-size: x-large;
+            box-shadow: 4px 4px 6px rgb(92, 79, 79, 0.5);
+            cursor: pointer;
+        }
+
+        button:active {
+            background-color: rgb(140, 81, 101);
+            box-shadow: 3px 5px #bfa3a3;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .content {
+            height: 85vh;
+            margin-top: 50px;
+        }
+
+        .about {
+            width: 50%;
+        }
+
+        .about,
+        .complain {
+            text-align: center;
+            background-color: white;
+            height: 300px;
+            margin: 0px auto;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+        }
+
+        .gallery .left,
+        .gallery .right {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+        }
+
+        .gallery .slider {
+            width: 400px;
+        }
+
+        .slidedown {
+            display: inline-flex;
+            flex-direction: column;
+        }
+
+        .service ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .service ul li {
+            /* padding: 0; */
+            margin: 2px;
+            background-color: rgb(255, 130, 197);
+            padding: 16px 64px;
+            display: none;
+        }
+
+        .dip {
+            display: none;
+        }
+
+        .complain {
+            padding: 40px;
+            width: 500px;
+            height: 400px;
+            /* display: flex; */
+        }
+
+        .complain input {
+            height: 20px;
+            margin-left: 10px;
+        }
+
+        #sumbit,
+        #edit {
+            width: 100px;
+            height: 30px;
+            border-radius: 5px;
+        }
+
+        .complain .form {
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .complain textarea {
+            width: 70%;
+            height: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="buttons">
+        <button id="about">About</button>
+        <button id="gallery">Gallery</button>
+        <div class="slidedown">
+            <button id="service">Services</button>
+            <div class="service">
+                <ul>
+                    <li>item #1</li>
+                    <li>item #2</li>
+                    <li>item #3</li>
+                </ul>
+            </div>
+        </div>
+        <button id="complain">Complain</button>
+    </div>
+
+    <div class="content">
+        <div class="about dip">
+            <h2>Story ABout Snow Man</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt maxime cupiditate nostrum eaque.
+                Dolores illum recusandae a distinctio, eaque odio, temporibus voluptatum modi similique sequi, tempore
+                cum nisi totam vitae!</p>
+        </div>
+        <div class="gallery dip">
+            <div class="left">
+                <img src="assets/left.png" alt="left button">
+            </div>
+            <div class="slider">
+                <img src="assets/1.jpg" alt="image slider">
+            </div>
+            <div class="right">
+                <img src="assets/right.png" alt="right button">
+            </div>
+        </div>
+        <div class="complain dip">
+            <div class="myform dip">
+                <div class="form">
+                    <p>Name:</p>
+                    <input type="text" id="name">
+                </div>
+                <div class="form">
+                    <p>Email:</p>
+                    <input type="text" id="mail">
+                </div>
+                <div class="form">
+                    <p>Phone:</p>
+                    <input type="number" id="phone">
+                </div>
+                <p>Complain:</p>
+                <textarea name="" id="mycomp"></textarea>
+                <div class="form">
+                    <input type="button" value="send" id="submit">
+                </div>
+            </div>
+            <div class="info dip">
+                <p>Your Name is:</p>
+                <p>Your Email is:</p>
+                <p>Your Phone is:</p>
+                <p>Your Complain is:</p>
+                <div class="form">
+                    <input type="button" value="Edit" id="edit">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        $(document).ready(function () {
+            var status = "none";
+
+            $("#about").click(() => {
+                $(".content > div").each(function () {
+                    if ($(this).is($(".about"))) {
+                        $(this).toggleClass("dip");
+                    }
+                    else {
+                        $(this).addClass("dip");
+                    }
+                });
+                $(".service ul li").slideUp(500);
+                status = "none";
+                $(".service").addClass("dip");
+            })
+
+
+            $("#gallery").click(() => {
+                $(".content > div").each(function () {
+                    if ($(this).is($(".gallery"))) {
+                        $(this).toggleClass("dip");
+                    }
+                    else {
+                        $(this).addClass("dip");
+                    }
+                });
+                $(".service ul li").slideUp(500);
+                status = "none";
+                $(".service").addClass("dip");
+
+                var i = 1;
+                $(".left").click((e) => {
+                    i++;
+                    if (i >= 9) {
+                        i = 1;
+                    }
+                    $(".slider img").attr("src", `assets/${i}.jpg`);
+                })
+                $(".right").click((e) => {
+                    i--;
+                    if (i <= 0) {
+                        i = 8;
+                    }
+                    $(".slider img").fadeOut(500, function () {
+                        $(".slider img").attr("src", `assets/${i}.jpg`);
+                        $(".slider img").fadeIn(500);
+                    });
+                })
+            })
+
+            $("#service").click(() => {
+                $(".content > div").each(function () {
+                    $(this).addClass("dip");
+                });
+                $(".service").removeClass("dip");
+
+                if (status === "none") {
+                    $(".service ul li").slideDown(500);
+                    status = "down";
+                }
+                else {
+                    $(".service ul li").slideUp(500);
+                    status = "none";
+                }
+            })
+
+
+            $("#complain").click(() => {
+                $(".content > div").each(function () {
+                    if ($(this).is($(".complain"))) {
+                        $(this).toggleClass("dip");
+                    }
+                    else {
+                        $(this).addClass("dip");
+                    }
+                });
+
+                $(".myform").toggleClass("dip");
+
+                $(".service ul li").slideUp(500);
+                status = "none";
+                $(".service").addClass("dip");
+
+                // make a global variables to save the data
+                let name, mail, phone, comp;
+
+                // on click is needed to let the submit after edit work
+                $(document).on("click", "#submit", () => {
+                    $(".myform").toggleClass("dip");
+                    $(".info").toggleClass("dip");
+
+                    name = $("#name").val();
+                    mail = $("#mail").val();
+                    phone = $("#phone").val();
+                    comp = $("#mycomp").val();
+
+                    let arr = [name, mail, phone, comp];
+                    $(".info > p").each(function (i) {
+                        let label = $(this).text().split(":")[0];
+                        $(this).text(`${label}: ${arr[i]}`);
+                    })
+
+                    // $(".info > p").eq(0).text(`${$(".info > p").eq(0)} ${name}`);
+                    // $(".info > p").eq(1).text(`${$(".info > p").eq(1)} ${mail}`);
+                    // $(".info > p").eq(2).text(`${$(".info > p").eq(2)} ${phone}`);
+                    // $(".info > p").eq(3).text(`${$(".info > p").eq(3)} ${comp}`);
+
+                    // $(".complain").html(`
+                    // <div>
+                    //     <p>Your Name is: ${name}</p>
+                    //     <p>Your Email is: ${mail}</p>
+                    //     <p>Your Phone is: ${phone}</p>
+                    //     <p>Your Complain is: ${comp}</p>
+                    //     <div class="form">
+                    //         <input type="button" value="Edit" id="edit">
+                    //     </div>
+                    // </div>`);
+                })
+
+
+                // configure edit button
+                $(document).on("click", "#edit", () => {
+                    $(".info").toggleClass("dip");
+                    $(".myform").toggleClass("dip");
+
+                    let arr = [name, mail, phone, comp];
+                    $(".myform > input").each(function (i) {
+                        $(this).val(arr[i]);
+                    })
+
+                    $(".myform textarea").val(comp);
+
+                    // $(".complain").html(`
+                    //     <div class="form">
+                    //         <p>Name:</p>
+                    //         <input type="text" id="name" value="${name}">
+                    //     </div>
+                    //     <div class="form">
+                    //         <p>Email:</p>
+                    //         <input type="text" id="mail" value="${mail}">
+                    //     </div>
+                    //     <div class="form">
+                    //         <p>Phone:</p>
+                    //         <input type="number" id="phone" value="${phone}">
+                    //     </div>
+                    //     <p>Complain:</p>
+                    //     <textarea name="" id="mycomp">${comp}</textarea>
+                    //     <div class="form">
+                    //         <input type="button" value="send" id="sumbit">
+                    //     </div>`);
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

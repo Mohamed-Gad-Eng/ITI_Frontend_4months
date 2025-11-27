@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #dv1{
+            border: 1px solid red;
+            width: 200px;
+        }
+        h1+h2{
+            font-size: 40px;
+        }
+        h1~div{
+            color:  aqua;
+        } */
+         .myClass{
+            color: yellow;
+            background-color: black;
+         }
+    </style>
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+    <input type="button" value="change style" id="btn">
+    <div class="myClass" id="dvBtn">simple test</div>
+    <div>....................</div>
+    <h2>test</h2>
+    <h1>Heading #1</h1>
+    <h2 class="c1">Heading Test</h2>
+    <h1>Welcome</h1>
+    <br>
+    <input type="button" value="change source" id="btn2">
+    <input type="button" value="show" id="showBtn">
+    <input type="button" value="hide" id="hideBtn">
+    <input type="button" value="fadeIn" id="fadeInBtn">
+    <input type="button" value="fadeOut" id="fadeOutBtn">
+    <input type="button" value="fadding" id="btn3">
+    <br>
+    <img src="images/11.jpg">
+    <div id="dv1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sit fuga exercitationem deleniti! Odio alias nostrum labore voluptate, quos ullam nam iure, a voluptatibus corporis nihil voluptas quas sunt soluta.
+    </div>
+    <a href="#">Google</a>
+    <div>
+        Lorem ipsum dolor,<a href="#">link</a> sit amet consectetur adipisicing elit. Ipsum ducimus excepturi autem dolores nihil necessitatibus officia saepe aliquid quam tenetur, culpa voluptate accusantium! Vel a, eligendi blanditiis voluptatibus modi eveniet.
+    </div>
+    <input type="text">
+    <ul>
+        <li>item#1</li>
+        <li>item#2</li>
+        <li>item#3</li>
+        <li>item#4</li>
+        <li>item#5</li>
+    </ul>
+    <p class="c1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto perferendis, molestiae quasi commodi facilis ab fugit sunt expedita corporis dignissimos officia. Sed deleniti reprehenderit quia dolor! Nostrum reprehenderit sit doloremque.</p>
+    <script>
+        $(document).ready(function(){
+            // console.log($)
+            // console.log($('h1'))
+            // $('h1').css('color','red').text('update')
+            // console.log($('h1')[0])
+            // $('h1')[0]//native object
+            // console.log($('h1').get(0))//native object
+            // $('h1').eq(0).css('background-color','aqua')
+            // $('.c1').html('new text')
+            // // $('div a').css('color','yellow')
+            // $('a','div').css('color','yellow')
+            // // $('ul li:first').css('backgroundColor','pink')
+            // $('ul li:eq(2)').css('color','blue')
+            // // $('input[type="text"]').css('color','white').css('backgroundColor','black')
+            // $('input[type="text"]').css({
+            //     "color":"white",
+            //     "backgroundColor":"black"
+            // })
+
+            // $('ul li:eq(1),ul li:eq(2)')
+            // $('ul li').filter(':eq(1),:eq(2)').css('backgroundColor','yellow')
+
+
+            // $('div').filter(function(){
+            //     console.log(this)
+            //     var width = $(this).width()
+            //     return width>100 && width<300
+            // }).css('backgroundColor','gray')
+
+            // $('h1').next('h2,div').html('test adjacent sibling')
+            // $('h1').next('h2,div').css('color','red')
+            // $('h1').siblings('h2,div').css('color','red')
+            // $('h1').nextAll('h2,div').css('color','red')
+
+            $('#btn').click(function(){
+                $('#dvBtn').toggleClass('myClass')
+            })
+            /*
+            Selectors--same as CSS 
+            id---#id
+            tag---tag name
+            class----  .class
+            */
+            // console.log(document.getElementsByTagName('h1'))//[h1,h1]
+            // document.getElementsByTagName('h1')[0].style.color = 'red'
+
+
+
+
+            // var dynamicObj = document.getElementsByTagName('h1')
+            // console.log(dynamicObj)//HTMLCollection
+            // var staticObj = document.querySelectorAll('h1')
+            // console.log(staticObj)//NodeList
+
+            // var elem = document.createElement('h1')
+            // elem.innerHTML="new Element"
+            // document.body.appendChild(elem)
+
+            // console.log(dynamicObj)
+            // console.log(staticObj)
+
+
+            $('ul li').each(function(idx){
+                $(this).text(idx)
+            })
+
+
+            $('#btn2').click(function(){
+                $('img').attr('src','images/dd.png')
+            })
+
+            $('#hideBtn').click(function(){
+                $('img').hide(1000)
+            })
+
+            $('#showBtn').click(function(){
+                $('img').show(1000)
+            })
+
+            $('#fadeInBtn').click(function(){
+                $('img').fadeIn(1000)
+            })
+
+            $('#fadeOutBtn').click(function(){
+                $('img').fadeOut(1000)
+            })
+
+            $('#btn3').click(function(){
+                $('img').fadeTo(1000,0.5)
+            })
+        })
+    </script>
+</body>
+</html>

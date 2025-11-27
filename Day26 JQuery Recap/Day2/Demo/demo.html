@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-size: 40px;
+            color: aqua;
+            font-family: fantasy;
+        }
+    </style>
+    <script src="script/jq-D.js"></script>
+    <script src="script.js"></script>
+    <script src="script/jquery-ui.js"></script>
+</head>
+<body>
+    <input type="button" value="show" id="showBtn">
+    <input type="button" value="hide" id="hideBtn">
+    <img src="images/dd.png" id="img1">
+    <div>Lorem ipsum, dolor 
+        <span>...........</span> sit amet consectetur adipisicing elit. At, laborum veniam! Reiciendis necessitatibus impedit pariatur soluta maxime quod similique nobis quae amet rem vitae error, quas eum praesentium eos facere?</div>
+    <ul>
+         
+        <li>item#1</li>
+        <li>item#2</li>
+        <li>item#3</li>
+        <li>item#4</li>
+        <li>item#5</li>
+        <li>item#6</li>
+       <li>item#7</li>
+    </ul>
+    <div>Lorem, ipsum dolor sit amet consectetur
+        <a href="#">link</a> adipisicing elit. Placeat id pariatur minus dolor dolores, ducimus debitis dolorum harum rerum omnis perspiciatis magnam inventore laudantium quidem deserunt expedita, nisi nostrum repellat!</div>
+    <input type="button" value="change" id="btn">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>Hello</h2>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam qui maxime natus laboriosam omnis voluptatem temporibus aperiam corporis quo, deserunt ut labore tenetur commodi. Veritatis quod natus nemo voluptatibus sunt.</div>
+    <script>
+
+        $(document).ready(function(){
+
+            $('#showBtn').click(function(){
+                $('#img1').show('slide',1000)
+            })
+            $('#hideBtn').click(function(){
+                $('#img1').hide('explode',1000)
+            })
+            // document.createElement('h1')
+            //append add as last child in parent
+            // $('body').append($('<h1>Welcome</h1>'))
+            $('<h1>Welcome</h1>').appendTo($('body'))
+            //append & prepend
+            //caller parent or child
+            // $('body').prepend($('<img>'))
+            // $('img').attr('src','images/dd.png')
+
+            //appendTo & prependTo
+            $('<img>').prependTo($('body'))
+            $('img').attr('src','images/dd.png')
+
+            $('#btn').click(function(){
+               $('ul').prepend($('ul li:last'))
+            })
+
+
+            $('<span>new text</span>').insertAfter($('ul li:first'))
+            // $('<span>new text</span>').insertBefore($('ul li:first'))
+
+            // $('div').wrap($('<p></p>'))
+            // $('div').wrapAll($('<p>'))
+                $('div').wrapInner($('<b>'))
+
+
+        //remove-empty
+        // $('div').empty()  
+        $('div').remove()    
+        
+        
+        $('img').click(function(){
+            //addEventListener
+            alert('hello')
+        })
+
+        $('img').click(function(){
+            console.log('test click')
+            $('h1').off('mouseover',fun)
+        })
+        //  document.getElementsByTagName('img')[0].onclick=function(){
+        //     alert('hello')
+        // }
+        // document.getElementsByTagName('img')[0].onclick=function(){
+        //     console.log('test click')
+        // }
+
+        $('h1').on('mouseover',function(){
+            console.log('mouse Over')
+        })
+
+        function fun(){
+            console.log('..............')
+        }
+        $('h1').on('mouseover',fun)
+
+        $('h2').one('click',function(){
+            alert('h2')
+        })
+
+        $('h2').on('click',function(){
+            console.log('h2............')
+        })
+
+
+        // $('ul li:first').click(function(){
+        //     $(this).css('color','red').text('changed')
+        // })
+        var obj = {username:'Ahmed'}
+        $('ul').on('click','li:first',{username:'Ali'},TestFun)
+
+
+        $('h1').on('myevent',function(){
+            $(this).css('color','red').hide(1000)
+        })
+
+        $('img').click(function(){
+            $('h1').trigger('myevent')
+        })
+
+        })
+
+       
+    </script>
+</body>
+</html>

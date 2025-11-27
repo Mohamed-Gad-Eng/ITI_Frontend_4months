@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Cart</title>
   <link rel="stylesheet" href="style.css">
-  <script src="cart.js" type="module"></script>
 </head>
+
 <body>
-  <header class="header">
-    <div class="logo">ITI E-Commerce</div>
-    <div class="cart">
-        <a href="index.html">Continue Shopping</a></li>
-    </div>
-  </header>
-    <div id="cart">
-        <h2>Your Shopping Cart 🛒</h2>
-    </div>
+        <div class="header">
+            <div class="logo">
+                <div class="logo-img"><img src="images/20251005_144627.jpg" alt="Logo"></div>
+                <p>E-Commerce</p>
+            </div>
+            <input type="checkbox" id="menu_checkbox" class="mobile-only">
+            <label for="menu_checkbox" class="burger-label mobile-only">
+                <div></div>
+                <div></div>
+                <div></div>
+            </label>
+            <!-- <div class="burger mobile-only" id="burger">☰</div> -->
+            <div class="nav">
+                <ul>
+                    <li class="mobile-only"><a href="cart.html">Cart <i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="cart desktop-only">
+                <a href="login.html">Login</a>
+                <a href="cart.html">Cart <i class="fa-solid fa-cart-shopping fa-bounce"></i></a>
+            </div>
+        </div>
+  <div id="cart">
+  </div>
+  
+  
+  <script src="https://kit.fontawesome.com/8e1488fa5e.js" crossorigin="anonymous"></script>
+  <script src="cart.js" type="module"></script>
 </body>
+
 </html>
