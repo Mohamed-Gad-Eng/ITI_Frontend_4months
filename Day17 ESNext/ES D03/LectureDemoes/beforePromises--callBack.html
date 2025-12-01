@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-    //      console.log("%c Script Begin","color:red") // stack
-    //  function loadData(){
-    //      setTimeout(()=>{  // async code 
-    //   console.log("Data Loaded")
-    //   },3000)
-    //  }
+        //      console.log("%c Script Begin","color:red") // stack
+        //  function loadData(){
+        //      setTimeout(()=>{  // async code 
+        //   console.log("Data Loaded")
+        //   },3000)
+        //  }
 
-    //   loadData()
-    //   console.log("%c Script End","color:magenta")// Stac
+        //   loadData()
+        //   console.log("%c Script End","color:magenta")// Stac
 
-             // callback 
+        // callback 
 
-      console.log("%c Script Begin","color:red") // stack
-     function loadData(callback){
-         setTimeout(()=>{  // async code 
-      console.log("Data Loaded")
-       
-    
-      callback()
-      },3000)
-     }
+        console.log("%c Script Begin", "color:red") // stack
+        function loadData(callback) {
+            setTimeout(() => {  // async code 
+                console.log("Data Loaded")
+                
+                callback()
+            }, 3000)
+        }
 
 
-     loadData(()=>{
-          console.log("%c Script End","color:magenta")
-     })
+        loadData(() => {
+            console.log("%c Script End", "color:magenta")
+        })
 
-     // callback hell 
-     
+        // callback hell 
+
 
     </script>
 </body>
+
 </html>
