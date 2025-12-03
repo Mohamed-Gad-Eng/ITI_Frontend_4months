@@ -156,26 +156,24 @@ function getFilteredProducts(pageIndex = 1, pageSize = 8) {
     if (!productsContainer) return; // only on pages with products
 
     // Build query params safely
-    const params = new URLSearchParams();
-    params.append("PageIndex", pageIndex);
-    params.append("PageSize", pageSize);
+    const params = new URLSearchParams({
+        PageIndex: pageIndex,
+        PageSize: pageSize,
+    });
 
     // Sorting
-    const sortEl = document.getElementById("sort");
-    const rawSortValue = sortEl ? sortEl.value : "";
-    const sort = sortMap[rawSortValue] ?? null;
+    const rawSortValue = document.getElementById("sort")?.value || "";
+    const sort = sortMap[rawSortValue];
 
     // Category
-    const categoryEl = document.getElementById("category");
-    const selectedCategory = categoryEl ? categoryEl.value : "";
-    const category = categoryMap[selectedCategory] ?? null;
+    const selectedCategory = document.getElementById("category")?.value || "";
+    const category = categoryMap[selectedCategory];
 
     // Search
-    const searchEl = document.getElementById("search");
-    const search = searchEl ? searchEl.value.trim() : "";
+    const search = document.getElementById("search")?.value.trim() || "";
 
-    if (category !== null) params.append("Category", category);
-    if (sort !== null) params.append("Sort", sort);
+    if (category != null) params.append("Category", category);
+    if (sort != null) params.append("Sort", sort);
     if (search) params.append("Search", search);
 
     const url = `${baseUrl}/Products/getAll?${params.toString()}`;
@@ -254,6 +252,8 @@ window.onload = function () {
                 selectedOption.textContent = option.textContent;
                 originalSelect.value = option.getAttribute("data-value");
                 optionsList.style.display = "none";
+
+                getFilteredProducts(); // refresh results
             });
         });
 

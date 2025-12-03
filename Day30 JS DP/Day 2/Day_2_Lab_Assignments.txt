@@ -1,0 +1,11 @@
+1-Consider that we have A store that sell products 
+and  every day the store put new products into
+ the store and the store want to let every people
+  that interested with store that new product is in the store now.
+
+
+
+2-Suppose that we play playstation 
+football game and during the game we want to change the game plan
+    (attack -defence - meduim)
+
