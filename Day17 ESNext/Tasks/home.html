@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <div class="logo-img"><img src="images/20251005_144627.jpg" alt="Logo"></div>
+            <p>E-Commerce</p>
+        </div>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <i class="fa-solid fa-moon light-icon"></i>
+        </button>
+        <input type="checkbox" id="menu_checkbox" class="mobile-only">
+        <label for="menu_checkbox" class="burger-label mobile-only">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        <!-- <div class="burger mobile-only" id="burger">☰</div> -->
+        <div class="nav">
+            <ul>
+                <li class="mobile-only"><a href="cart.html">Cart <i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="cart desktop-only">
+            <a href="login.html">Login</a>
+            <a href="cart.html">Cart <i class="fa-solid fa-cart-shopping fa-bounce"></i></a>
+        </div>
+    </div>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Your Style</h1>
+            <p>Shop the latest products with the best prices</p>
+            <a href="shop.html" class="hero-btn">Shop Now</a>
+        </div>
+    </section>
+    <section class="features">
+        <div class="feature">
+            <i class="fa-solid fa-truck"></i>
+            <h3>Fast Delivery</h3>
+            <p>Quick and reliable shipping</p>
+        </div>
+
+        <div class="feature">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>Secure Payment</h3>
+            <p>Your data is always protected</p>
+        </div>
+
+        <div class="feature">
+            <i class="fa-solid fa-star"></i>
+            <h3>Top Rated Products</h3>
+            <p>Only the best quality items</p>
+        </div>
+    </section>
+    <section class="home-products">
+        <h2>Featured Products</h2>
+        <div class="products-preview">
+            <!-- reuse card style -->
+        </div>
+
+        <a href="shop.html" class="view-all">View All Products →</a>
+    </section>
+    <section class="cta">
+        <h2>Ready to start shopping?</h2>
+        <a href="shop.html" class="hero-btn">Browse Products</a>
+    </section>
+
+
+
+    <script src="https://kit.fontawesome.com/8e1488fa5e.js" crossorigin="anonymous"></script>
+    <script src="theme.js" type="module"></script>
+    <script>
+        document.querySelectorAll('.header a').forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

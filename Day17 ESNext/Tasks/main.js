@@ -49,9 +49,9 @@ export let items = [];
 let storedItems = JSON.parse(localStorage.getItem("cart")) || [];
 items = storedItems.map(i => new CartItem(i.product, i.quantity));
 
-// window.addEventListener("load", () => {
-//     render()
-// })
+
+
+var pageSize = 8;
 
 
 export function addProduct(product) {
@@ -67,6 +67,21 @@ export function addProduct(product) {
 export function removeProduct(productId) {
     items = items.filter(i => i.product.id !== productId);
     localStorage.setItem("cart", JSON.stringify(items));
+}
+
+
+// ----------------- Toast Message ----------------
+
+function showCartMessage(message = "Item added to cart!") {
+    const toast = document.getElementById("cart-toast");
+    if (!toast) return;
+
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 1800); // disappears after 1.8s
 }
 
 
@@ -95,40 +110,6 @@ function showAll(productsArray) {
     });
 }
 
-// function showAll(products) {
-//     const container = document.querySelector("#products");
-//     if (!container) return;
-
-//     container.innerHTML = "";
-
-//     products.forEach(product => {
-//         const card = document.createElement("div");
-//         card.classList.add("card");
-//         card.innerHTML = `
-//                             <div class="favorite-icon">
-//                         <i class="fa-regular fa-heart"></i>
-//                     </div>
-//             <div class="myImg">
-//             <img src="${product.image}" alt="${product.title}">
-//             </div>  
-//             <h4>${product.title}</h4>
-//             <p>$${product.price.toFixed(2)}</p>
-//             <button class="add" onClick="myClick(${product.id})">Add to Cart</button>
-//             `;
-//         container.appendChild(card);
-//     })
-
-// data-id="${product.id}"
-
-// container.querySelectorAll(".add").forEach(btn => {
-//     btn.addEventListener("click", (e) => {
-//         const id = parseInt(e.target.dataset.id);
-//         let prod = products.find(p => p.id == id);
-//         addProduct(prod);
-//     });
-// })
-
-// }
 
 
 // ------------------------Backend Intergration--------------------
@@ -152,8 +133,10 @@ const categoryMap = {
 
 
 
-function getFilteredProducts(pageIndex = 1, pageSize = 8) {
+function getFilteredProducts(pageSize = 8, pageIndex = 1) {
     if (!productsContainer) return; // only on pages with products
+
+    showLoadingSkeleton(pageSize);
 
     // Build query params safely
     const params = new URLSearchParams({
@@ -180,34 +163,121 @@ function getFilteredProducts(pageIndex = 1, pageSize = 8) {
 
     console.log("Fetching:", url);
 
-    fetch(url)
-        .then(res => {
-            if (!res.ok) {
-                throw new Error(`HTTP error: ${res.status}`);
-            }
-            return res.json();
-        })
-        .then(result => {
-            // result has: pageIndex, pageSize, count, data[]
-            console.log("Result:", result);
+    // fetch(url)
+    //     .then(res => {
+    //         if (!res.ok) {
+    //             throw new Error(`HTTP error: ${res.status}`);
+    //         }
+    //         return res.json();
+    //     })
+    //     .then(result => {
+    //         // result has: pageIndex, pageSize, count, data[]
+    //         console.log("Result:", result);
 
-            // Map backend data → Product objects
+    //         // Map backend data → Product objects
+    //         products = result.data.map(
+    //             p => new Product(p.id, p.title, p.price, p.category, p.image)
+    //         );
+
+    //         showAll(products);
+
+    //         // If you have a pagination function, compute total pages
+    //         if (typeof setupPagination === "function") {
+    //             const totalPages = Math.ceil(result.count / result.pageSize);
+    //             setupPagination(totalPages, pageIndex);
+    //         }
+    //     })
+    //     .catch(err => console.error("Fetch error:", err));
+
+    fetchWithRetry(url)
+        .then(result => {
             products = result.data.map(
                 p => new Product(p.id, p.title, p.price, p.category, p.image)
             );
 
             showAll(products);
 
-            // If you have a pagination function, compute total pages
             if (typeof setupPagination === "function") {
                 const totalPages = Math.ceil(result.count / result.pageSize);
                 setupPagination(totalPages, pageIndex);
             }
         })
-        .catch(err => console.error("Fetch error:", err));
+        .catch(err => {
+            console.error("Final fetch error:", err);
+            productsContainer.innerHTML = `
+                <div style="
+                    max-width: 400px;
+                    margin: 50px auto;
+                    padding: 20px 25px;
+                    color: #000;
+                    text-align: center;
+                    background: rgba(255, 255, 255, 0.25);
+                    backdrop-filter: blur(10px);
+                    border-radius: 12px;
+                    border: 1px solid rgba(255, 255, 255, 0.35);
+                    font-size: 1.1rem;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+                ">
+                    Failed to load products.<br>Please refresh the page.
+                </div>
+            `;
+
+        });
+
 }
 
+function fetchWithRetry(url, retries = 10, delay = 500) {
+    return new Promise((resolve, reject) => {
 
+        function attemptFetch(remaining) {
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+
+                    // Backend didn't return real data yet → retry
+                    if (!data || !data.data || data.data.length === 0) {
+                        if (remaining > 0) {
+                            console.warn(`Retrying... (${10 - remaining + 1})`);
+                            return setTimeout(() => attemptFetch(remaining - 1), delay);
+                        }
+                        return reject("Backend did not respond with valid data.");
+                    }
+
+                    // Success
+                    resolve(data);
+                })
+                .catch(err => {
+                    if (remaining > 0) {
+                        console.warn(`Fetch failed → retrying... (${10 - remaining + 1})`);
+                        return setTimeout(() => attemptFetch(remaining - 1), delay);
+                    }
+                    reject(err);
+                });
+        }
+
+        attemptFetch(retries);
+    });
+}
+
+// --------------------------Skeleton loading-----------------------------
+
+function showLoadingSkeleton(count = 8) {
+    const container = document.querySelector("#products");
+    container.innerHTML = "";
+
+    for (let i = 0; i < count; i++) {
+        const skeleton = document.createElement("div");
+        skeleton.classList.add("skeleton-card");
+
+        skeleton.innerHTML = `
+            <div class="skeleton-img"></div>
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line small"></div>
+        `;
+
+        container.appendChild(skeleton);
+    }
+}
 
 
 // --------------------------window loading-----------------------------
@@ -216,18 +286,18 @@ window.onload = function () {
     window.myClick = function myClick(id) {
         const prod = products.find(p => p.id == id);
         addProduct(prod);
+        showCartMessage();
     }
 
     if (productsContainer) {
-        // Load ALL products first ⚡
-        getFilteredProducts();
+        getFilteredProducts(pageSize);
 
         // Only apply filters *after user interaction*
         ["sort", "category", "search"].forEach(id => {
             const el = document.getElementById(id);
             if (!el) return;
             const eventName = id === "search" ? "input" : "change";
-            el.addEventListener(eventName, () => getFilteredProducts());
+            el.addEventListener(eventName, () => getFilteredProducts(pageSize));
         });
     }
 
@@ -253,7 +323,7 @@ window.onload = function () {
                 originalSelect.value = option.getAttribute("data-value");
                 optionsList.style.display = "none";
 
-                getFilteredProducts(); // refresh results
+                getFilteredProducts(pageSize); // refresh results
             });
         });
 

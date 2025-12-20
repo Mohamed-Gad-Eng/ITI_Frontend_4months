@@ -1,0 +1,23 @@
+{
+  "name": "nodejs-day2",
+  "version": "1.0.0",
+  "description": "this is a node js demo",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "amira",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.1",
+    "mongoose": "^8.20.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}

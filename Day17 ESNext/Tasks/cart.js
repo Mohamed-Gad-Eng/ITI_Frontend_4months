@@ -1,8 +1,14 @@
 import { items, removeProduct } from "./main.js"
 
-window.addEventListener("load", () => {
+window.onload = function () {
     render();
-})
+
+    document.querySelectorAll('.header a').forEach(link => {
+        if (link.href === window.location.href) {
+            link.classList.add('active');
+        }
+    });
+}
 
 function render() {
     const div = document.querySelector("#cart");
@@ -90,10 +96,22 @@ function getTotalPrice() {
     }, 0);
 }
 
-window.onload = function() {
-    document.querySelectorAll('.header a').forEach(link => {
-        if (link.href === window.location.href) {
-            link.classList.add('active');
-        }
-    });
-};
+function showLoadingSkeleton(count = 8) {
+    const container = document.querySelector("#products");
+    container.innerHTML = "";
+
+    for (let i = 0; i < count; i++) {
+        const skeleton = document.createElement("div");
+        skeleton.classList.add("skeleton-card");
+
+        skeleton.innerHTML = `
+            <div class="skeleton-img"></div>
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line small"></div>
+        `;
+
+        container.appendChild(skeleton);
+    }
+}
+
+

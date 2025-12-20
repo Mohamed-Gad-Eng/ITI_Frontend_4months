@@ -2,45 +2,91 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Cart</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-        <div class="header">
-            <div class="logo">
-                <div class="logo-img"><img src="images/20251005_144627.jpg" alt="Logo"></div>
-                <p>E-Commerce</p>
-            </div>
-            <input type="checkbox" id="menu_checkbox" class="mobile-only">
-            <label for="menu_checkbox" class="burger-label mobile-only">
-                <div></div>
-                <div></div>
-                <div></div>
-            </label>
-            <!-- <div class="burger mobile-only" id="burger">☰</div> -->
-            <div class="nav">
-                <ul>
-                    <li class="mobile-only"><a href="cart.html">Cart <i class="fa-solid fa-cart-shopping"></i></a></li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <div class="cart desktop-only">
-                <a href="login.html">Login</a>
-                <a href="cart.html">Cart <i class="fa-solid fa-cart-shopping fa-bounce"></i></a>
-            </div>
+    <div class="header">
+        <div class="logo">
+            <div class="logo-img"><img src="images/20251005_144627.jpg" alt="Logo"></div>
+            <p>E-Commerce</p>
         </div>
-  <div id="cart">
-  </div>
-  
-  
-  <script src="https://kit.fontawesome.com/8e1488fa5e.js" crossorigin="anonymous"></script>
-  <script src="cart.js" type="module"></script>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <i class="fa-solid fa-moon light-icon"></i>
+        </button>
+        <input type="checkbox" id="menu_checkbox" class="mobile-only">
+        <label for="menu_checkbox" class="burger-label mobile-only">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        <!-- <div class="burger mobile-only" id="burger">☰</div> -->
+        <div class="nav">
+            <ul>
+                <li class="mobile-only"><a href="cart.html">Cart <i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="cart desktop-only">
+            <a href="login.html">Login</a>
+            <a href="cart.html">Cart <i class="fa-solid fa-cart-shopping fa-bounce"></i></a>
+        </div>
+    </div>
+    <div id="cart">
+    </div>
+        <footer class="footer">
+            <div class="footer-container">
+
+                <div class="footer-col">
+                    <h3>E-Commerce</h3>
+                    <p>
+                        A modern e-commerce platform built with a focus on performance,
+                        usability, and clean design.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>Email: support@ecommerce.com</p>
+                    <p>Phone: +20 100 000 0000</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="socials">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                © 2025 E-Commerce. All rights reserved.
+            </div>
+        </footer>
+
+    <script src="https://kit.fontawesome.com/8e1488fa5e.js" crossorigin="anonymous"></script>
+    <script src="cart.js" type="module"></script>
+    <script src="theme.js" type="module"></script>
 </body>
 
 </html>

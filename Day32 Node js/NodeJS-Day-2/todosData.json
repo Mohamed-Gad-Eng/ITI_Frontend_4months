@@ -1,0 +1,6 @@
+[
+  { "id": 1, "title": "creat app", "status": "in progress" },
+  { "id": 2, "title": "do assignment", "status": "todo" },
+  { "id": 3, "title": "vacation", "status": "completed" },
+  { "id": 4, "title": "read a book", "status": "todo" }
+]

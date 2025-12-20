@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | E-Commerce</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <div class="logo-img"><img src="images/20251005_144627.jpg" alt="Logo"></div>
+            <p>E-Commerce</p>
+        </div>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <i class="fa-solid fa-moon light-icon"></i>
+        </button>
+        <input type="checkbox" id="menu_checkbox" class="mobile-only">
+        <label for="menu_checkbox" class="burger-label mobile-only">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        <!-- <div class="burger mobile-only" id="burger">☰</div> -->
+        <div class="nav">
+            <ul>
+                <li class="mobile-only"><a href="cart.html">Cart <i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="cart desktop-only">
+            <a href="login.html">Login</a>
+            <a href="cart.html">Cart <i class="fa-solid fa-cart-shopping fa-bounce"></i></a>
+        </div>
+    </div>
+
+    <main class="about-page">
+
+        <section class="about-hero">
+            <h1>About Our Store</h1>
+            <p>
+                Building a modern shopping experience with clean design
+                and powerful functionality.
+            </p>
+        </section>
+
+        <section class="about-content">
+            <div class="about-box">
+                <h2>Who We Are</h2>
+                <p>
+                    This e-commerce platform is a frontend project focused on delivering
+                    a smooth and intuitive shopping experience.
+                    It demonstrates real-world concepts such as API integration,
+                    cart management, authentication, and responsive UI.
+                </p>
+            </div>
+
+            <div class="about-box">
+                <h2>What We Offer</h2>
+                <ul>
+                    <li>Product browsing with filtering & sorting</li>
+                    <li>Cart and favorite management</li>
+                    <li>User authentication</li>
+                    <li>Dark / Light mode</li>
+                    <li>Responsive design for all devices</li>
+                </ul>
+            </div>
+
+            <div class="about-box">
+                <h2>Technology Stack</h2>
+                <p>
+                    HTML • CSS • JavaScript • REST APIs
+                    <br />
+                    Designed to simulate a real production-ready e-commerce system.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-col">
+                <h3>E-Commerce</h3>
+                <p>
+                    A modern e-commerce platform built with a focus on performance,
+                    usability, and clean design.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>Email: support@ecommerce.com</p>
+                <p>Phone: +20 100 000 0000</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="socials">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 E-Commerce. All rights reserved.
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/8e1488fa5e.js" crossorigin="anonymous"></script>
+    <script src="theme.js" type="module"></script>
+    <script>
+        document.querySelectorAll('.header a').forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+
+</html>
