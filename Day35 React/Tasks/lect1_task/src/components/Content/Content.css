@@ -1,0 +1,167 @@
+.mycontent {
+    grid-area: content;
+    padding: 50px 10% 0;
+}
+
+.mycontent .firstpage {
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    gap: 20px;
+}
+
+.mycontent .firstpage .profileimg>img {
+    width: 100%;
+    height: auto;
+}
+
+.mycontent .firstpage .profileimg {
+    width: 50%;
+}
+
+.mycontent .firstpage .writensection {
+    width: 50%;
+}
+
+.mycontent .firstpage h1 {
+    font-size: 60px;
+    font-weight: bold;
+    /* margin: 0; */
+}
+
+.mycontent .firstpage p {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.mycontent .firstpage button {
+    background-color: white;
+    color: #5d5d5d;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border-width: 1px;
+    margin-bottom: 15px;
+}
+
+.mycontent .firstpage table {
+    margin-top: 30px;
+    margin-bottom: 70px;
+
+}
+
+.mycontent .firstpage table tr td:first-child {
+    width: 50px;
+}
+
+.mycontent .firstpage table td {
+    color: #5d5d5d;
+}
+
+.mycontent .firstpage table p {
+    background-color: #aaaaaa;
+    text-align: center;
+    margin: 0 5px;
+    padding: 5px;
+    font-size: small;
+    font-weight: bolder;
+}
+
+.mycontent .secondpage p{
+    font-size: small;
+    padding-bottom: 10px;
+}
+
+.mycontent .secondpage h2,h5 , .mycontent .thirdpage h2,h5{
+    text-align: center;
+}
+
+.mycontent .secondpage h5, .mycontent .thirdpage h5{
+    font-size: 20px;
+    font-weight: 100;
+    margin: 100px 0 5px;
+}
+
+.mycontent .secondpage h2, .mycontent .thirdpage h2{
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.mycontent .secondpage .sections {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.mycontent .secondpage .sections > *{
+    width: 30%;
+}
+
+.mycontent .secondpage .skill{
+    display: flex;
+    width: 100%;
+}
+
+.mycontent .secondpage .skill hr {
+    border: none;
+    border-bottom: 3px solid #dedbdb;
+    flex: 1;
+    margin: 10px 0 20px 0;
+}
+
+.mycontent .secondpage .skill hr:first-child {
+    border-color:black;
+}
+
+.mycontent .secondpage .skill.s1 hr:first-child {
+    flex: calc(60/(40));
+}
+.mycontent .secondpage .skill.s2 hr:first-child {
+    flex: calc(80/20);
+}
+.mycontent .secondpage .skill.s3 hr:first-child {
+    flex: calc(40/60);
+}
+.mycontent .secondpage .skill.s4 hr:first-child {
+    flex: calc(80/20);
+}
+
+.mycontent .secondpage .circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15px 25px 0;
+
+  background:
+    radial-gradient(farthest-side, white 95%, transparent 81%)
+    ,
+    conic-gradient(black calc(var(--p) * 1%), #dedbdb 0); 
+}
+.mycontent .thirdpage p{
+    font-size: smaller;
+}
+.mycontent .thirdpage .logo{
+    width: 65px;
+    height: 65px;
+    border: 1px solid #5d5d5d;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mycontent .thirdpage .newstile{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 20px 20px 0;
+}
+
+.mycontent .thirdpage .data h3, p{
+    margin: 0;
+}
