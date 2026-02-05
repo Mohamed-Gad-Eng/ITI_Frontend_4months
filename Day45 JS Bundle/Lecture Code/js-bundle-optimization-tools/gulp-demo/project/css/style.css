@@ -1,0 +1,19 @@
+
+/* ---------  GLOBAL STYLES  --------- */
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+
+
+body {
+  background-attachment: fixed;
+}
+
+body > img{
+  width: 70%;
+  margin:-500px 150px;
+}

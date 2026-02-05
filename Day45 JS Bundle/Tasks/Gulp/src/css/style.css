@@ -1,0 +1,41 @@
+table,
+  th,
+  td {
+    border: none;
+  }
+
+  div.tabl {
+    width: 1000px;
+    background-color: aqua;
+    border-radius: 15px;
+    margin: auto;
+  }
+
+  #myTable {
+    width: 1000px;
+  }
+  #myTable img {
+    max-width: 80px;
+    max-height: 80px;
+    display: block;
+    margin: 0 auto;
+  }
+  #myTable td {
+    width: 10px;
+    padding: 5px 10px;
+  }
+
+  #myTable tr:first-child {
+    background-color: darkcyan;
+    color: white;
+  }
+
+  #myTable th:first-child {
+    background-color: darkcyan;
+    border-top-left-radius: 15px;
+  }
+
+  #myTable th:last-child {
+    background-color: darkcyan;
+    border-top-right-radius: 15px;
+  }

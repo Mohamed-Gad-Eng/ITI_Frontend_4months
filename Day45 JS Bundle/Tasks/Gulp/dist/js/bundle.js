@@ -1,0 +1,2 @@
+var MyTable=document.querySelector("#myTable"),mySelect=document.querySelector("select");(xhr=new XMLHttpRequest).open("Get","https://api.jsonbin.io/v3/b/68fcf992d0ea881f40bb2b6c",!0),xhr.send(""),xhr.onreadystatechange=function(){4==xhr.readyState&&200==xhr.status&&JSON.parse(xhr.responseText).record.forEach(function(t){MyTable.children[0].innerHTML+=`<tr><td><img src="${t.image}"></td>
+            <td>${t.firstName}</td><td>${t.lastName}</td><td>${t.phone}</td><td>${t.address}</td><td>${t.track}</td><td>${t.courses}</td><td>${t.position}</td></tr>`})};

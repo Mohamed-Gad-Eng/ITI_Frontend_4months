@@ -1,0 +1,22 @@
+.footer {
+    grid-area: footer;
+    padding: 50px 11% 0;
+    text-align: center;
+}
+
+.footer .section{
+    min-width: 33%;
+}
+
+.footer > div{
+    display: flex;
+    justify-content: center;
+}
+
+.footer a{
+    padding: 20px;
+}
+
+.footer p{
+    margin-bottom: 20px;
+}

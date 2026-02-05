@@ -1,0 +1,44 @@
+gulp demo commands:
+1) Installing Gulp globally
+npm install gulp-cli -g
+2) Verify Gulp has been installed with the following:
+gulp -v
+3) Run command npm init to generate package.json
+npm init //or //npm init -y
+4) You can now install Gulp in your project folder using this command:
+npm install gulp --save-dev
+5) for images task
+npm install gulp-optimize-images -D
+6) for HTML task
+npm install -D gulp-html-minifier-terser
+7) for js task
+npm install gulp-concat gulp-terser --save-dev
+8) for CSS task
+npm install gulp-clean-css gulp-concat -D
+
+
+webpack demo commands:
+1) npm init -y
+2) adding webapck to an app
+npm install webpack webpack-cli -D
+3) serve the app to the browser
+npm i webpack-dev-server html-webpack-plugin -D
+4) loaders to install
+npm i -D html-loader style-loader css-loader sass-loader sass
+5) plugins
+npm i -D clean-webpack-plugin mini-css-extract-plugin
+css-minimizer-webpack-plugin
+6) plugins for images minify
+npm i -D image-minimizer-webpack-plugin sharp
+7) run webpack
+npx webpack
+8) run webpack with dev-server
+npx webpack serve
+9) change mode
+1-with cmd directly
+npx webpack --mode=production
+2-change mode value in the configuration file to “production” and then run
+webpack.
+npx webpack
+3-for multiple configuration files:
+npx webpack --config filename.js

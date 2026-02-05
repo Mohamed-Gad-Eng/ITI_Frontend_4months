@@ -23,7 +23,7 @@ export default function TodoPage() {
         const value = document.getElementById("task").value;
         const newTodo = new Todo(value)
         const newList = [...list];
-        newList.push(newTodo);
+        newList.push(newTodo);npm 
         setList(newList);
         document.getElementById("task").value = ""
     }

@@ -1,0 +1,16 @@
+
+$color: rgba(0,0,0, 0.4);
+.myDiv{
+  background-color: $color; /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,-100%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  height: 300px;
+  text-align: center;
+  line-height: 200px;
+}
