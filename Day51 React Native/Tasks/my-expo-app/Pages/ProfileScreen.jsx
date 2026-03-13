@@ -12,9 +12,10 @@ export default function ProfileScreen() {
     return require("../assets/icon.png");
   }, []);
 
-  function changeProfileImage(){
+  async function changeProfileImage(){
     // 1- Open gallery
     await ImagePicker.launchImageLibraryAsync()
+    // 2- store img path
   }
 
   return (
