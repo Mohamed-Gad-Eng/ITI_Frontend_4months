@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tasks</title>
+
+		<style>
+			:root {
+				color-scheme: light;
+			}
+			body {
+				margin: 0;
+				padding: 24px;
+				background: white;
+				color: black;
+				font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+			}
+			main {
+				max-width: 720px;
+				margin: 0 auto;
+				border: 1px solid black;
+				border-radius: 12px;
+				background: cyan;
+				padding: 24px;
+			}
+			fieldset {
+				border: 0;
+				padding: 0;
+				margin: 0;
+			}
+			label {
+				display: inline-block;
+				margin: 6px 12px 6px 0;
+			}
+			input,
+			select,
+			button {
+				border: 1px solid black;
+				border-radius: 8px;
+				padding: 6px 8px;
+				background: white;
+				color: black;
+			}
+			button {
+				cursor: pointer;
+			}
+			#tasksBox {
+				padding: 0;
+				background: transparent;
+			}
+			#taskList {
+				margin: 0;
+				padding-left: 18px;
+			}
+			.todoItem {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 12px;
+				padding: 6px 0;
+			}
+			.todoText {
+				flex: 1;
+			}
+			#message {
+				min-height: 1.2em;
+				margin: 12px 0;
+			}
+		</style>
+
+		<script src="js/idb.js"></script>
+	</head>
+	<body>
+		<main>
+			<h1>To do list</h1>
+
+			<p id="message" role="status" aria-live="polite"></p>
+
+			<h2>Add new to do</h2>
+			<form id="taskForm">
+				<fieldset>
+					<div>
+						<label>
+							Task title:
+							<input id="title" name="title" type="text" required />
+						</label>
+					</div>
+
+					<div>
+						<label>
+							Hours (hh):
+							<input
+								id="hours"
+								name="hours"
+								type="number"
+								min="0"
+								step="1"
+								value="0"
+								required
+							/>
+						</label>
+						<label>
+							Mins (mm):
+							<input
+								id="mins"
+								name="mins"
+								type="number"
+								min="0"
+								max="59"
+								step="1"
+								value="0"
+								required
+							/>
+						</label>
+					</div>
+
+					<div>
+						<label>
+							Day:
+							<select id="day" name="day" required></select>
+						</label>
+						<label>
+							Month:
+							<select id="month" name="month" required></select>
+						</label>
+						<label>
+							Year:
+							<select id="year" name="year" required></select>
+						</label>
+					</div>
+
+					<button id="addTaskBtn" type="submit">Add Task</button>
+				</fieldset>
+			</form>
+
+			<h2>Tasks</h2>
+			<div id="tasksBox">
+				<ul id="taskList" aria-live="polite"></ul>
+			</div>
+		</main>
+
+		<script src="main.js"></script>
+	</body>
+</html>
