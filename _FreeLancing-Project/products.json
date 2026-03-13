@@ -1,0 +1,203 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "تيشيرت أوفر سايز شبابي",
+            "description": "تيشيرت أوفر سايز بخامة قطن ناعمة وتصميم تريندي مناسب للخروجات.",
+            "price": 520,
+            "oldPrice": 650,
+            "category": "شبابي",
+            "type": "تيشيرت",
+            "image": "oversize_tshirt_1.png",
+            "sizes": [
+                "M",
+                "L",
+                "XL"
+            ],
+            "colors": [
+                "أسود",
+                "أوف وايت"
+            ],
+            "inStock": true
+        },
+        {
+            "id": 2,
+            "name": "هودي مطبوع شبابي",
+            "description": "هودي شتوي بطباعة جرافيك عصرية وخامة دافئة.",
+            "price": 980,
+            "oldPrice": 1200,
+            "category": "شبابي",
+            "type": "هودي",
+            "image": "hoodie_print_1.png",
+            "sizes": [
+                "M",
+                "L",
+                "XL"
+            ],
+            "colors": [
+                "رمادي",
+                "كحلي"
+            ],
+            "inStock": true
+        },
+        {
+            "id": 3,
+            "name": "بنطلون جينز سكيني",
+            "description": "جينز سكيني بقصة ضيقة وخامة ستريتش مريحة.",
+            "price": 1100,
+            "oldPrice": null,
+            "category": "شبابي",
+            "type": "جينز",
+            "image": "skinny_jeans_1.png",
+            "sizes": [
+                "30",
+                "32",
+                "34",
+                "36"
+            ],
+            "colors": [
+                "أزرق فاتح",
+                "أزرق غامق"
+            ],
+            "inStock": true
+        },
+        {
+            "id": 4,
+            "name": "سويت شيرت ساده",
+            "description": "سويت شيرت ساده بألوان مميزة مناسب للجامعة والخروجات.",
+            "price": 750,
+            "oldPrice": 900,
+            "category": "شبابي",
+            "type": "سويت شيرت",
+            "image": "sweatshirt_1.png",
+            "sizes": [
+                "M",
+                "L",
+                "XL"
+            ],
+            "colors": [
+                "زيتي",
+                "موف"
+            ],
+            "inStock": true
+        },
+        {
+            "id": 5,
+            "name": "جاكيت بامب شتوي",
+            "description": "جاكيت بامب خفيف ودافئ بتصميم عصري.",
+            "price": 1850,
+            "oldPrice": 2200,
+            "category": "شبابي",
+            "type": "جاكيت",
+            "image": "puffer_jacket_1.png",
+            "sizes": [
+                "L",
+                "XL",
+                "XXL"
+            ],
+            "colors": [
+                "أسود"
+            ],
+            "inStock": true
+        },
+        {
+            "id": 6,
+            "name": "تيشيرت بطباعة جرافيك",
+            "description": "تيشيرت شبابي بطباعة مميزة مناسب للستايل الكاجوال.",
+            "price": 480,
+            "oldPrice": 600,
+            "category": "شبابي",
+            "type": "تيشيرت",
+            "image": "graphic_tshirt_1.png",
+            "sizes": [
+                "M",
+                "L",
+                "XL"
+            ],
+            "colors": [
+                "أبيض",
+                "أسود"
+            ],
+            "inStock": true
+        },
+        {
+            "id": 7,
+            "name": "بنطلون كارغو شبابي",
+            "description": "كارغو عملي بجيوب جانبية وقصة مريحة.",
+            "price": 1250,
+            "oldPrice": 1500,
+            "category": "شبابي",
+            "type": "كارغو",
+            "image": "cargo_pants_1.png",
+            "sizes": [
+                "30",
+                "32",
+                "34"
+            ],
+            "colors": [
+                "زيتي",
+                "بيج"
+            ],
+            "inStock": true
+        },
+        {
+            "id": 8,
+            "name": "شورت جينز قصير",
+            "description": "شورت جينز مناسب للصيف بتصميم عصري.",
+            "price": 650,
+            "oldPrice": null,
+            "category": "شبابي",
+            "type": "شورت",
+            "image": "denim_shorts_1.png",
+            "sizes": [
+                "30",
+                "32",
+                "34"
+            ],
+            "colors": [
+                "أزرق"
+            ],
+            "inStock": true
+        },
+        {
+            "id": 9,
+            "name": "قميص كاجوال كاروهات",
+            "description": "قميص كاروهات ستايل شبابي مناسب للجامعة.",
+            "price": 820,
+            "oldPrice": 950,
+            "category": "شبابي",
+            "type": "قميص",
+            "image": "casual_shirt_1.png",
+            "sizes": [
+                "M",
+                "L",
+                "XL"
+            ],
+            "colors": [
+                "أحمر",
+                "أزرق"
+            ],
+            "inStock": true
+        },
+        {
+            "id": 10,
+            "name": "تريننج رياضي شبابي",
+            "description": "تريننج مريح مناسب للجيم والخروجات اليومية.",
+            "price": 1400,
+            "oldPrice": 1650,
+            "category": "شبابي",
+            "type": "تريننج",
+            "image": "tracksuit_1.png",
+            "sizes": [
+                "M",
+                "L",
+                "XL"
+            ],
+            "colors": [
+                "أسود",
+                "رمادي"
+            ],
+            "inStock": true
+        }
+    ]
+}
